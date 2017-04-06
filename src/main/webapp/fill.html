@@ -7,35 +7,50 @@
     <link href="css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
-<div style="margin-left: 100px">
-    <div class="container">
-        <div class="row">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-4">
+            <form>
+                <h1>创建名片</h1>
+                <!--form-group 代表一个input组件-->
+                <table>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <input class="form-control" value="真实姓名" >
+                            </div></td>
+                        <td>
+                            <div class="form-group">
+                                <input class="form-control" value="出生年份">
+                            </div></td>
+                        <td><div class="form-group">
+                            <input class="form-control" value="性别" >
+                        </div></td>
+                    </tr>
 
-<h1>创建名片</h1>
-<table>
-    <tr>
-        <td><input value="真实姓名" class="form-group"></td>
-        <td><input value="出生年份"></td>
-        <td><button type="button" class="btn btn-large btn-primary sex active">男</button>
-            <button type="button" class="btn btn-large btn-primary sex active">女</button></td>
-       <td rowspan="4"><img src="img/1.png" width="450px" height="300px"></td>
-    </tr>
-    <tr>
-        <td>上海</td>
-        <td>开始工作年份</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td ><input value="请输入常用邮箱"></td>
-         <td>用于接收投递反馈以及企业HR的应聘邀请</td>
-         <td></td>
-    </tr>
-    <tr>
-        <td><button>保存名片</button></td>
-        <td></td><td></td>
-    </tr>
-</table>
-            </div></div>
+                    <tr>
+                        <td colspan="2">
+                            <div class="form-group">
+                                <input class="form-control" value="地区">
+                            </div></td>
+                        <td>
+                            <div class="form-group">
+                                <input class="form-control" value="工作年份">
+                            </div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <input class="form-control" value="电子邮件">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <button type="button" class="btn btn-info"  onclick="window.open('resume.html')">保存名片</button>
+            </form>
+        </div>
+    </div>
 </div>
+
 </body>
 </html>
