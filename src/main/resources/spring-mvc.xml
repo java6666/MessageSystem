@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+
+    <!--开启对象注解-->
+    <context:component-scan base-package="controller"/>
+    <!--激活驱动（作用：允许将请求单数绑定到控制器参数，controller就是控制器）-->
+    <mvc:annotation-driven/>
+    <!--* 一颗是当前目录下所有文件  ** 整个目录下的所有文件-->
+    <!--/css/  后面不加斜杠就是文件，加了/就是文件下的数据 用 逗号 分开可以指定其他目录 classpath:*/..-->
+
+    <mvc:resources mapping="/css/**" location="/css/"/>
+    <mvc:resources mapping="/html/**" location="/html/"/>
+    <!--<mvc:resources mapping="/css/**" location="/css/，/js/ ,classpath:*/..."/>-->
+
+    <!--开启视图管理：视图解析器
+                     可以有多个ViewResolver
+                     InternalResourceViewResolver必须放在最后，来
+                     -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--     <property name="prefix" value="/WEB-INF"/>
+             <property name="suffix" value=".jsp"/>-->
+    </bean>
+
+    <!-- SpringMVC上传文件时，需要配置MultipartResolver处理器 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <!-- 指定所上传文件的总大小不能超过200MB。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 -->
+        <property name="maxUploadSize" value="20000000"/>
+        <!--延迟加载 布尔值-->
+        <property name="resolveLazily" value="true"/>
+    </bean>
+
 
 </beans>

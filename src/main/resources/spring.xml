@@ -3,4 +3,43 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+
+
+
+    <!--激活注解-->
+    <context:component-scan base-package="model"/>
+    <!--连接数据库-->
+
+    <!--读取配置文件-->
+    <context:property-placeholder location="classpath*:jdbc.properties"/>
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="clone">
+        <property name="driverClassName" value="${jdbc.driverClass}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+    <!--创建Mybatis工厂-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="classpath*:mapper/*.xml"/>
+        <!-- <property name="plugins">
+             <array>
+                 <bean class="com.github.pagehelper.PageHelper">
+                     <property name="properties">
+                      <value>
+                          dialect=mysql
+                      </value>
+                     </property>
+                 </bean>
+             </array>
+         </property>-->
+    </bean>
+
+
+    <!--创建dao-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <property name="basePackage" value="model.dao"/>
+    </bean>
+
 </beans>
