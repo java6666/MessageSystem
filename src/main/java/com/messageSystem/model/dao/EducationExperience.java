@@ -1,6 +1,5 @@
-package model.dao;
+package com.messageSystem.model.dao;
 
-import model.entity.User;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -8,8 +7,5 @@ import org.springframework.stereotype.Repository;
  * @Author 张超
  */
 @Repository
-public interface UserDao {
-    boolean insertUser(User user);
-
-
+public interface EducationExperience {
 }

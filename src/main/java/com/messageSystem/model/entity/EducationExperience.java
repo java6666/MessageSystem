@@ -1,4 +1,4 @@
-package model.entity;
+package com.messageSystem.model.entity;
 
 /**
  * Created by Administrator on 2017/4/6.

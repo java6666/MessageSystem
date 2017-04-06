@@ -1,4 +1,4 @@
-package controller;
+package com.messageSystem.controller;
 
 /**
  * Created by admin on 2017/4/6.
