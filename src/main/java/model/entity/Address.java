@@ -9,7 +9,7 @@ package model.entity;
  */
 public class Address {
     private Integer id;         //主键
-    private Integer user_Id;    //外键(关联User表)
+    private Integer userId;    //外键(关联User表)
     private String  province;   //地址“省”
     private String  city;       // 地址(市、区)
     private String  district;   // 县
@@ -22,12 +22,12 @@ public class Address {
         this.id = id;
     }
 
-    public Integer getUser_Id() {
-        return user_Id;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUser_Id(Integer user_Id) {
-        this.user_Id = user_Id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getProvince() {
