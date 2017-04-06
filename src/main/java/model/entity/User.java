@@ -3,7 +3,7 @@ package model.entity;
 /**
  * Created by Administrator on 2017/4/6.
  *    @author  胡正蛮
- *    用户信息表
+ *    注册用户信息表（创建名片页面）
  */
 public class User {
     private Integer id;      //主键
