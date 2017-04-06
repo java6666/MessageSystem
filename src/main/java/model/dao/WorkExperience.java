@@ -2,7 +2,7 @@ package model.dao;
 
 /**
  * Created by admin on 2017/4/6.
+ * @Author 张超
  */
-public class Test {
-
+public interface WorkExperience {
 }
