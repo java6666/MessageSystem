@@ -2,12 +2,13 @@ package model.entity;
 
 /**
  * Created by Administrator on 2017/4/6.
- *
+ *    @author  胡正蛮
+ *    用户信息表
  */
 public class User {
     private Integer id;      //主键
-    private String userName; //用户名
-    private String password; //密码
+    private String  userName; //用户名
+    private String  password; //密码
     private Boolean admin;   //管理权限
     private Boolean gender;  //性别
     private String  birthday;//工作时间
