@@ -5,6 +5,8 @@
     <title></title>
     <!--  注册第三步-->
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/fill.css" type="text/css"/>
+    <script language='javascript' src="js/fill.js"></script>
 </head>
 <body>
 <div class="container">
@@ -17,31 +19,33 @@
                     <tr>
                         <td>
                             <div class="form-group">
-                                <input class="form-control" value="真实姓名" onfocus="javascript:if (this.value=='真实姓名')this.value=''">
+                                <input class="form-control" value="真实姓名" >
                             </div></td>
                         <td>
                             <div class="form-group">
-                                <input class="form-control" value="出生年份" onfocus="javascript:if (this.value=='出生年份')this.value=''">
+                                <input class="form-control" value="出生年份">
                             </div></td>
                         <td><div class="form-group">
-                            <input class="form-control" value="性别" onfocus="javascript:if (this.value=='性别')this.value=''">
+                            <input class="form-control" value="性别" >
                         </div></td>
                     </tr>
-
                     <tr>
                         <td colspan="2">
-                            <div class="form-group">
-                                <input class="form-control" value="地区" onfocus="javascript:if (this.value=='地区')this.value=''">
-                            </div></td>
+                            <div id="site" onmouseover="CitySelectionTwo()" onmouseout="CitySelectionOen()">
+                               <!-- <input class="form-control" value="地区">-->
+                              <span id="CitySelection">当前城市</span>
+                              <div id="CitySelectionImg"><img src="img/CitySelectionOen.jpg" id="img"/></div>
+                            </div>
+                        </td>
                         <td>
                             <div class="form-group">
-                                <input class="form-control" value="工作年份" onfocus="javascript:if (this.value=='工作年份')this.value=''">
+                                <input class="form-control" value="工作年份">
                             </div></td>
                     </tr>
                     <tr>
                         <td>
                             <div class="form-group">
-                                <input class="form-control" value="电子邮件" onfocus="javascript:if (this.value=='电子邮件')this.value=''">
+                                <input class="form-control" value="电子邮件">
                             </div>
                         </td>
                     </tr>
@@ -51,6 +55,5 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>
