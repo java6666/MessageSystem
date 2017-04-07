@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50554
 File Encoding         : 65001
 
-Date: 2017-04-06 20:24:20
+Date: 2017-04-07 11:36:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -3604,15 +3604,18 @@ CREATE TABLE `user` (
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `admin` tinyint(1) DEFAULT NULL,
-  `gender` tinyint(1) NOT NULL,
-  `birthday` varchar(0) NOT NULL,
-  ` e-mail` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `gender` tinyint(1) DEFAULT NULL,
+  `birthday` varchar(255) DEFAULT NULL,
+  ` e_mail` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`,`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
+INSERT INTO `user` VALUES ('1', 'admin', '123456', '1', '1', null, null);
+INSERT INTO `user` VALUES ('2', '可可', '123', null, '0', null, null);
+INSERT INTO `user` VALUES ('3', '可可', '123', null, '0', '2015-12', null);
 
 -- ----------------------------
 -- Table structure for work_experience
