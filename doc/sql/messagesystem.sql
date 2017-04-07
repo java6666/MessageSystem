@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50554
 File Encoding         : 65001
 
-Date: 2017-04-07 12:53:18
+Date: 2017-04-07 16:20:11
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -3788,21 +3788,20 @@ INSERT INTO `region` VALUES ('5000', '511681', '华蓥市', '286', '0', '0', 'hu
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) NOT NULL,
+  `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `admin` tinyint(1) DEFAULT NULL,
   `gender` tinyint(1) DEFAULT NULL,
   `birthday` varchar(255) DEFAULT NULL,
-  ` e_mail` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`,`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'admin', '123456', '1', '1', null, null);
-INSERT INTO `user` VALUES ('2', '可可', '123', null, '0', null, null);
-INSERT INTO `user` VALUES ('3', '可可', '123', null, '0', '2015-12', null);
+INSERT INTO `user` VALUES ('1', 'admin', '123456', '1', '1', null, '');
 
 -- ----------------------------
 -- Table structure for work_experience
