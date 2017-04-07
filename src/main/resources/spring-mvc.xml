@@ -7,7 +7,7 @@
 
 
     <!--开启对象注解-->
-    <context:component-scan base-package="controller"/>
+    <context:component-scan base-package="com.messageSystem.controller"/>
     <!--激活驱动（作用：允许将请求单数绑定到控制器参数，controller就是控制器）-->
     <mvc:annotation-driven/>
     <!--* 一颗是当前目录下所有文件  ** 整个目录下的所有文件-->
