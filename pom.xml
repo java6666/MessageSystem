@@ -171,18 +171,18 @@
     <build>
         <!--运行插件-->
         <plugins>
-           <plugin>
-               <!--插件地址-->
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-compiler-plugin</artifactId>
-               <!--configuration插件运行时的参数设置-->
-               <configuration>
-                   <!--定义书写时级别-->
-                   <source>1.8</source>
-                   <!--打包是级别-->
-                   <target>1.8</target>
-               </configuration>
-           </plugin>
+            <plugin>
+                <!--插件地址-->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <!--configuration插件运行时的参数设置-->
+                <configuration>
+                    <!--定义书写时级别-->
+                    <source>1.8</source>
+                    <!--打包是级别-->
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
