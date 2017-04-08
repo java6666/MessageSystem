@@ -5,11 +5,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-
-
     <!--激活注解-->
     <context:component-scan base-package="com.messageSystem.model"/>
     <!--连接数据库-->
+
 
     <!--读取配置文件-->
     <context:property-placeholder location="classpath*:jdbc.properties"/>
@@ -20,27 +19,16 @@
         <property name="password" value="${jdbc.password}"/>
     </bean>
     <!--创建Mybatis工厂-->
+
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="mapperLocations" value="classpath*:mapper/*.xml"/>
-        <!-- <property name="plugins">
-             <array>
-                 <bean class="com.github.pagehelper.PageHelper">
-                     <property name="properties">
-                      <value>
-                          dialect=mysql
-                      </value>
-                     </property>
-                 </bean>
-             </array>
-         </property>-->
     </bean>
-
 
     <!--创建dao-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-        <property name="basePackage" value="com.messageSystem.model"/>
+        <property name="basePackage" value="com.messageSystem.model.dao"/>
     </bean>
 
 </beans>

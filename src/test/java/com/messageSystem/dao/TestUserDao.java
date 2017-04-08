@@ -12,20 +12,20 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @Author 张超
  */
 public class TestUserDao {
-    private ApplicationContext context=new ClassPathXmlApplicationContext("spring.xml");
+    private ApplicationContext context =
+            new ClassPathXmlApplicationContext("spring.xml");
 
     @Test
-    public void testInsertUser(){
-        User user = new User();
-        user.setUserName("可可");
+    public void testInsertUser() {
+     /*   User user = new User();
+        user.setUserName("123");
         user.setPassword("123");
         user.setGender(false);
-        user.setBirthday("2015-12");
+        user.setBirthday("2015-12-30");
         user.setEmail("737255782@qq.com");
         UserDao dao = context.getBean(UserDao.class);
-        dao.insertUser(user);
+        dao.insertUser(user);*/
 
 
     }
-
 }

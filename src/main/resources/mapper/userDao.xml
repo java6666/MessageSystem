@@ -4,8 +4,8 @@
 
     <!--插入数据-->
     <insert id="insertUser">
-        INSERT  INTO `user`(username,password,gender,birthday, e_mail)
-        VALUES(#{userName},#{password},#{gender},#{birthday,#{email})
+        INSERT  INTO `user`(username,password,gender,birthday,email) VALUES
+            (#{user.userName},#{user.password},#{user.gender},#{user.birthday},#{user.email})
     </insert>
 
     <resultMap id="queryUser" type="com.messageSystem.model.entity.User">
@@ -19,7 +19,12 @@
     </resultMap>
 
     <select id="selectUser" resultMap="queryUser">
-       select * from `user`;
+       select * from `user`
+    </select>
+
+
+    <select id="queryUser" resultType="com.messageSystem.model.entity.User">
+        SELECT * FROM `user` WHERE  username=#{userName}
     </select>
 
 
