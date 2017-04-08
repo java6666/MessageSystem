@@ -1,11 +1,10 @@
-package com.messageSystem.login;
+package com.messageSystem.controller.login;
 
 import com.messageSystem.model.dao.UserDao;
 import com.messageSystem.model.entity.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -23,7 +22,7 @@ public class LoginUser {
     @Resource
     private UserDao userDao;
 
-    @RequestMapping(path = "/userLogin", method = RequestMethod.POST)
+    @RequestMapping(value = "/userLogin")
     public String userLogin(String userName, String password, Model model, HttpSession session) {
         User user = new User();
 

@@ -1,4 +1,4 @@
-package com.messageSystem.login;
+package com.messageSystem.controller.login;
 
 import com.messageSystem.model.dao.UserDao;
 import org.springframework.stereotype.Controller;

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-import static com.messageSystem.login.LoginUser.USER_LOGIN;
+import static com.messageSystem.controller.login.LoginUser.USER_LOGIN;
 
 /**
  * Created by admin on 2017/4/8.
@@ -23,7 +23,7 @@ import static com.messageSystem.login.LoginUser.USER_LOGIN;
 public class MyFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        System.out.println("chu");
+        System.out.println("初始化");
     }
 
     @Override

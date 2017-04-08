@@ -90,7 +90,7 @@
 
 
 
-                <form action="/userRegister" method="">
+                <form action="/userRegister" method="post">
                 <div>
                     <span>注册求职者账号</span><span style="text-align: right"><a>非大陆用户>></a></span>
                 </div>
