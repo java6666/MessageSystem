@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title></title>
     <!--  注册第三步-->
-    <link href="css/bootstrap.css" rel="stylesheet">
+
     <link rel="stylesheet" href="./css/fill.css" type="text/css"/>
-    <script language='javascript' src="js/fill.js"></script>
+    <script src="jQuery/jquery-3.2.0.js"></script>
+    <script language='javascript' src="js/jquery.js"></script>
 </head>
 <body>
 <div class="container">
@@ -32,9 +33,8 @@
                     <tr>
                         <td colspan="2">
                             <div id="site" onmouseover="CitySelectionTwo()" onmouseout="CitySelectionOen()">
-                               <!-- <input class="form-control" value="地区">-->
                               <span id="CitySelection">当前城市</span>
-                              <div id="CitySelectionImg"><img src="img/CitySelectionOen.jpg" id="img"/></div>
+                              <div id="CitySelectionImg" onclick="display_city_chunk()"><img src="img/CitySelectionOen.jpg" id="img"/></div>
                             </div>
                         </td>
                         <td>
@@ -55,5 +55,156 @@
         </div>
     </div>
 </div>
+<!--隐藏域  选择城市地区div -->
+<div id="city_chunk">
+    <div>
+        <div id="title_one">
+            <span id="title_message">选择城市信息</span>
+            <span id="exit" onclick="none_conceal_city()">X</span>
+        </div>
+
+        <div id="show_site">
+            <div >最多选择1项:<span>显示获取到的地址<span>x</span></span></div>
+
+        </div>
+        <div id="show_city_one">
+            <hr class="wire_one">
+
+            <div id="show_city" onclick="display_conceal_city()">
+                <span>全部</span>
+                <img src="img/subscript.png"/>
+                <em></em>
+            </div>
+
+            <hr class="wire_two">
+        </div>
+        <div id="region">
+            <p>热门城市</p>
+            <div id="conceal_city">
+                <div id="region_two">
+                    <ul>
+                        <li class="city_one"><a href="">北京</a></li>
+
+                        <li class="city_one"><a href="">上海</a></li>
+
+                        <li class="city_one"><a href="">广州</a></li>
+
+                        <li class="city_one"><a href="">深圳</a></li>
+
+                        <li class="city_one"><a href="">天津</a></li>
+
+                        <li class="city_one"><a href="">苏州</a></li>
+
+                        <li class="city_two"><a href="">重庆</a></li>
+
+                        <li class="city_two"><a href="">南京</a></li>
+
+                        <li class="city_two"><a href="">杭州</a></li>
+
+                        <li class="city_two"><a href="">大连</a></li>
+
+                        <li class="city_two"><a href="">成都</a></li>
+
+                        <li class="city_two"><a href="">武汉</a></li>
+
+                    </ul>
+                </div>
+                <p>全部省份</p>
+                <div id="f" class="all_city">
+                    <ul>
+                        <li class="city_eight"><a href="">江西省</a></li>
+
+                        <li class="city_eight"><a href="">辽宁省</a></li>
+
+                        <li class="city_eight"><a href="">河南省</a></li>
+
+                        <li class="city_eight"><a href="">宁夏</a></li>
+                    </ul>
+                </div>
+                <div id="e" class="all_city">
+                    <ul class="all_region">
+                        <li class="city_seven"><a href="">内蒙古</a></li>
+
+                        <li class="city_seven"><a href="">青海省</a></li>
+
+                        <li class="city_seven"><a href="">山东省</a></li>
+
+                        <li class="city_seven"><a href="">广西</a></li>
+
+                    </ul>
+                </div>
+                <div id="d" class="all_city">
+                    <ul class="all_region">
+
+                        <li class="city_six"><a href="">福建省</a></li>
+
+                        <li class="city_six"><a href="">甘肃省</a></li>
+
+                        <li class="city_six"><a href="">陕西省</a></li>
+
+                        <li class="city_six"><a href="">四川省</a></li>
+                    </ul>
+                </div>
+                <div id="c" class="all_city">
+                    <ul  >
+                        <li class="city_five"><a href="">湖北省</a></li>
+
+                        <li class="city_five"><a href="">湖南省</a></li>
+
+                        <li class="city_five"><a href="">云南省</a></li>
+
+                        <li class="city_five"><a href="">吉林省</a></li>
+
+
+                    </ul>
+                </div>
+                <div id="b" class="all_city">
+                    <ul class="all_region">
+
+                        <li class="city_four"><a href="" id="city_four">山西省</a></li>
+
+                        <li class="city_four"><a href="" >贵州省</a></li>
+
+                        <li class="city_four"><a href="" >海南省</a></li>
+
+                        <li class="city_four"><a href="" >河北省</a></li>
+
+
+                    </ul>
+                </div>
+                <div id="a" class="all_city">
+                    <ul class="all_region">
+
+                        <li class="city_three"><a href="">广东省</a></li>
+
+                        <li class="city_three"><a href="" >江苏省</a></li>
+
+                        <li class="city_three"><a href="" >浙江省</a></li>
+
+                        <li class="city_three"><a href="" >安徽省</a></li>
+                    </ul>
+                </div>
+
+            <div id="g">
+                <ul class="all_region">
+                    <li class="nine" id="nine"><a href="">黑龙江省</a></li>
+
+                    <li class="nine" id="nine_two"><a href="">新疆</a></li>
+
+                    <li class="nine" ><a href="">西藏</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <div id="confirm_cancel">
+            <button id="confirm">确定</button>
+            <button id="cancel">取消</button>
+        </div>
+    </div>
+</div>
+
+<!--js方法样式文件，
+注放上面会导致文件无效-->
+<script language='javascript' src="js/fill.js"></script>
 </body>
 </html>

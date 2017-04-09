@@ -23,8 +23,34 @@ function  CitySelectionOen(){
     CitySelectionImg.style.cssText = "background-color: #FFFFFF;";
 }
 
+/*选择城市块，移动改变背景颜色*/
+//获取所有li的节点
+var list =document.getElementsByTagName("li");
+//给每个li绑定事件
+for(var i=0;i<list.length;i++){
+    list[i].onmousemove=function(){
+        this.style.backgroundColor="#00bff6";
+    };
+    list[i].onmouseout=function(){
+        this.style.backgroundColor="";
+    };
+}
+/*显示隐藏的div(选择城市 )*/
+function display_city_chunk(){
 
+    document.getElementById('city_chunk').style.display = document.getElementById('city_chunk').style.display=='none'?'block':'none';
 
+}
+/*显示隐藏的div(选择城市地区)*/
+function display_conceal_city(){
+
+        document.getElementById('region').style.display = 'block';
+    /*document.getElementById('region').style.display = document.getElementById('region').style.display=='none'?'block':'block';*/
+}
+/*隐藏div(选择城市)*/
+function none_conceal_city(){
+    document.getElementById('city_chunk').style.display = 'none';
+}
 
 
 
