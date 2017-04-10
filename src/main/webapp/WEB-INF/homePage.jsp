@@ -140,7 +140,7 @@
                                         ${sessionScope.USER_LOGIN.userName}
                                     </c:if>
                                 </td>
-                                <td><a href="../MOBAN/user.jsp">个人主页</a></td>
+                                <td><a href="../Backstage/user.jsp">个人主页</a></td>
                             </tr>
                             <tr>
                                 <td>姓名</td>

@@ -72,7 +72,7 @@
                         <form action="/userLogin" method="post">
                             <div class="form-group">
                                 <label>用户名</label>
-                                <input type="text" name="userName" class="form-control">
+                                <input type="text" name="accountParameter" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>密 码</label>
@@ -97,7 +97,7 @@
                 <form action="/userRegister" method="post">
                     <div class="form-group">
                         <label>输入账号</label>
-                        <input name="userName" class="form-control"/>
+                        <input name="accountParameter" class="form-control"/>
                     </div>
 
                     <div class="form-group">

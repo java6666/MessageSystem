@@ -1,7 +1,7 @@
 package com.messageSystem.dao;
 
-import com.messageSystem.model.dao.UserDao;
-import com.messageSystem.model.entity.User;
+import com.messageSystem.model.dao.AccountDao;
+import com.messageSystem.model.entity.Account;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -17,15 +17,19 @@ public class TestUserDao {
 
     @Test
     public void testInsertUser() {
-     /*   User user = new User();
-        user.setUserName("123");
-        user.setPassword("123");
-        user.setGender(false);
-        user.setBirthday("2015-12-30");
-        user.setEmail("737255782@qq.com");
-        UserDao dao = context.getBean(UserDao.class);
-        dao.insertUser(user);*/
 
+        Account account = new Account();
+        account.setAccount("123");
+      //  account.setPassword("123");
+      //  account.setPermission(false);
+        AccountDao dao = context.getBean(AccountDao.class);
 
+        //测试插入数据
+       // boolean b = dao.userRegister(account);
+       // System.out.println(b);
+
+       //测试查询数据
+    /*    Account account1 = dao.queryUser(account);
+        System.out.println(account1);*/
     }
 }

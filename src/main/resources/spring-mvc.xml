@@ -14,7 +14,7 @@
     <!--/css/  后面不加斜杠就是文件，加了/就是文件下的数据 用 逗号 分开可以指定其他目录 classpath:*/..-->
 
     <mvc:resources mapping="/css/**" location="/css/"/>
-    <mvc:resources mapping="/MOBAN/**" location="/MOBAN/"/>
+    <mvc:resources mapping="/Backstage/**" location="/Backstage/"/>
     <!--<mvc:resources mapping="/css/**" location="/css/，/js/ ,classpath:*/..."/>-->
 
     <!--开启视图管理：视图解析器
