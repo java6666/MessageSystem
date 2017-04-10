@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50554
 File Encoding         : 65001
 
-Date: 2017-04-10 14:02:41
+Date: 2017-04-10 16:30:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,13 +24,17 @@ CREATE TABLE `account_table` (
   `account` varchar(255) NOT NULL COMMENT '用户账号',
   `password` varchar(255) NOT NULL COMMENT '密码',
   `permission` tinyint(1) DEFAULT NULL COMMENT '管理权限',
+  `registration_date` datetime DEFAULT NULL COMMENT '注册时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `account` (`account`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='账号密码管理权限表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='账号密码管理权限表';
 
 -- ----------------------------
 -- Records of account_table
 -- ----------------------------
+INSERT INTO `account_table` VALUES ('1', 'admin', '123456', '1', '2017-04-10 14:57:55');
+INSERT INTO `account_table` VALUES ('2', '123', '123', '0', '2017-04-10 15:17:22');
+INSERT INTO `account_table` VALUES ('4', '123456', '123456', null, '2017-04-10 15:55:21');
 
 -- ----------------------------
 -- Table structure for address
@@ -41,12 +45,13 @@ CREATE TABLE `address` (
   `user_message_id` int(11) DEFAULT NULL COMMENT '用户信息的id',
   `company_id` int(11) DEFAULT NULL COMMENT '关联公司id',
   `education_experience_id` int(11) DEFAULT NULL COMMENT '学校id',
+  `nationality` varchar(255) DEFAULT NULL COMMENT '国籍',
   `province` varchar(255) DEFAULT NULL COMMENT '省份',
   `city` varchar(255) DEFAULT NULL COMMENT '城市',
   `district` varchar(255) DEFAULT NULL COMMENT '区',
   `street` varchar(255) DEFAULT NULL COMMENT '街道',
   `community` varchar(255) DEFAULT NULL COMMENT '小区',
-  `hausnummer` varchar(255) DEFAULT NULL COMMENT '门牌号',
+  `house_number` varchar(255) DEFAULT NULL COMMENT '门牌号',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='地址表';
 
@@ -82,8 +87,8 @@ CREATE TABLE `education_experience` (
   `school_name` varchar(255) DEFAULT NULL COMMENT '学校名字',
   `education` varchar(255) DEFAULT NULL COMMENT '学历',
   `specialty` varchar(255) DEFAULT NULL COMMENT '专业',
-  `admission_date` datetime DEFAULT NULL COMMENT '入学时间',
-  `graduate_time` datetime DEFAULT NULL COMMENT '毕业时间',
+  `admission_date` varchar(255) DEFAULT NULL COMMENT '入学时间',
+  `graduate_time` varchar(255) DEFAULT NULL COMMENT '毕业时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
