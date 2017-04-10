@@ -5,8 +5,10 @@
     <!--插入数据-->
     <insert id="insertUser">
         INSERT  INTO `user`(username,password,gender,birthday,email) VALUES
-            (#{user.userName},#{user.password},#{user.gender},#{user.birthday},#{user.email})
+            (#{userName},#{password},#{gender},#{birthday},#{email})
     </insert>
+
+
 
     <resultMap id="queryUser" type="com.messageSystem.model.entity.User">
         <id column="id" property="id"/>
@@ -17,13 +19,13 @@
         <result column="birthday" property="birthday"/>
         <result column="e_mail" property="email"/>
     </resultMap>
-
+    <!--查询所有用户-->
     <select id="selectUser" resultMap="queryUser">
        select * from `user`
     </select>
 
-
-    <select id="queryUser" resultType="com.messageSystem.model.entity.User">
+         <!--登录用户查询是否存在-->
+    <select id="queryUser" resultMap="queryUser">
         SELECT * FROM `user` WHERE  username=#{userName}
     </select>
 

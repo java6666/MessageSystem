@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-import static com.messageSystem.controller.login.LoginUser.USER_LOGIN;
+
 
 /**
  * Created by admin on 2017/4/8.
@@ -30,7 +30,7 @@ public class MyFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest req= (HttpServletRequest) servletRequest;
         HttpServletResponse resp= (HttpServletResponse) servletResponse;
-        if((req.getSession().getAttribute(USER_LOGIN))!=null){
+        if((req.getSession().getAttribute("USER_LOGIN"))!=null){
             filterChain.doFilter(servletRequest,servletResponse);
         }else {
             req.getRequestDispatcher("/index.jsp").forward(req,resp);

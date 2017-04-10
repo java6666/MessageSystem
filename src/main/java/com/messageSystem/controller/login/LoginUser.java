@@ -18,7 +18,6 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class LoginUser {
 
-    public static final String USER_LOGIN = "user_Login";
     @Resource
     private UserDao userDao;
 
@@ -31,19 +30,19 @@ public class LoginUser {
             user.setUserName(userName);
             user.setPassword(password);
         } else {//没有数据
-            model.addAttribute("userLogin", "无效数据");
+            model.addAttribute("user", "无效数据");
             return "/index.jsp";
         }
            User databasesUser = userDao.queryUser(user);
            if (databasesUser!=null){
                if (user.getPassword().equals(databasesUser.getPassword())) {//判断密码是否正确
-                   session.setAttribute(USER_LOGIN,databasesUser);
+                   session.setAttribute("USER_LOGIN",databasesUser);
                    return "redirect:/showHomePage";
                }else {
-                   model.addAttribute("userLogin", "密码有误!请重新输入");
+                   model.addAttribute("user", "密码有误!请重新输入");
                }
            }else {
-               model.addAttribute("userLogin", "用户不存在");
+               model.addAttribute("user", "用户不存在");
            }
 
 

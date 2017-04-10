@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: admin
@@ -13,30 +14,35 @@
     <meta charset="UTF-8">
     <title>显示界面</title>
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
-        function registerfoo() {
+        function registerFoo() {
             var login = document.getElementById("content-0");
             var register = document.getElementById("content-1");
             login.style.display = "none";
             login.innerHTML = register.style.display = "block";
+        };
 
-        }
+        /*判读两次输入密码是否一样*/
 
-        function loginfoo() {
-            var register = document.getElementById("content-1");
-            var login = document.getElementById("content-0");
-            register.style.display = "none";
-            register.innerHTML = login.style.display = "block";
+        function foo(mark) {
+            var passValue = document.getElementById("password");
+            if (!(mark.value == passValue.value)) {
+                alert("两次输入密码不相符");
+            };
+        };
 
-        }
     </script>
 </head>
 <body>
 
 
-
 <div class="container-fluid">
+
     <!--row行样式-->
+
     <div class="row" style="height: 60px;background-color: #a6e1ec">
         <table>
             <tr>
@@ -54,19 +60,22 @@
     </div>
 
     <div class="row">
+        <c:if test="${requestScope.user!=null}">
+            <script>alert(${requestScope.user})</script>
+        </c:if>
+
         <div class="col-md-9"></div>
         <div class="col-md-3">
-
-            <div id="content-0" style="height: 220px;width: 300px;border: 1px blue solid;background-color: #31b0d5">
-
-                <p style="text-decoration-color: white">求职者账号登录</p>
+            <div id="content-0" style="height: 220px;width: 300px;border: 1px #31b0d5 solid;background-color: #31b0d5">
                 <div>
                     <div>
                         <form action="/userLogin" method="post">
                             <div class="form-group">
+                                <label>用户名</label>
                                 <input type="text" name="userName" class="form-control">
                             </div>
                             <div class="form-group">
+                                <label>密 码</label>
                                 <input type="password" name="password" class="form-control">
                             </div>
                             <div class="form-group">
@@ -78,61 +87,39 @@
                             <input type="checkbox">
                             <span>下次自动登录</span>&nbsp;&nbsp;&nbsp;
                             <a href="">忘记密码?</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="" onclick="registerfoo()">立即注册</a>
+                            <span style="cursor: pointer;" onclick="registerFoo()">立即注册</span>
                         </div>
                     </div>
                 </div>
-
-
             </div>
-
-            <div id="content-1" style="height: 260px;width: 300px;border: 1px red solid;display: none">
-
-
-
+            <div id="content-1"
+                 style="height: 280px;width: 300px;border: 1px #31b0d5 solid;background-color: #31b0d5;display: none">
                 <form action="/userRegister" method="post">
-                <div>
-                    <span>注册求职者账号</span><span style="text-align: right"><a>非大陆用户>></a></span>
-                </div>
-                <!--form-group 代表一个input组件-->
-                <div class="form-group">
-                    <input  name="userName" class="form-control" value="手机号"
-                           onfocus="javascript:if (this.value=='手机号')this.value=''"></div>
+                    <div class="form-group">
+                        <label>输入账号</label>
+                        <input name="userName" class="form-control"/>
+                    </div>
 
-                <div class="form-group">
-                    <input  name="password" class="form-control" value="密码(6-16字母.数字.无空格)"
-                           onfocus="javascript:if (this.value=='密码(6-16字母.数字.无空格)')this.value=''"></div>
+                    <div class="form-group">
+                        <label>输入密码</label>
+                        <input type="password" class="form-control" id="password">
+                    </div>
 
-                <table cellspacing="2" cellpadding="2">
-                    <tr>
-                        <td class="form-group">
-                            <input class="form-control" value="验证码"
-                                   onfocus="javascript:if (this.value=='验证码')this.value=''"></td>
-                        <td class="form-group">
-                            <input type="submit" class="btn btn-primary" value="获取验证码" style="width: 150px"
-                                   onfocus="javascript:if (this.value=='获取验证码')this.value=''"></td>
-                    </tr>
-                </table>
-                <br/>
-                <div class="form-group" colspan="2">
-                    <input type="submit" class="btn btn-primary" value="提交"
-                           style="width: 300px" type=button
-                           onclick="window.open('fill.html')">
-                </div>
-                <div>
-                    <input type="checkbox">
-                    <span>接受用户服务协议</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <span>已有账号,</span>
-                    <a href="" onclick="loginfoo()">马上登陆</a>
-                </div>
+                    <div class="form-group">
+                        <label>确认密码</label>
+                        <input type="password" name="password" class="form-control" onmouseout="foo(this)">
+                    </div>
+                        <input type="submit" class="btn btn-primary" value="提交" style="width: 300px"/>
                 </form>
-
+                <a href="/userLogin">已有账号，马上登陆</a>
             </div>
         </div>
 
 
     </div>
-</div>
 
+</div>
 </body>
+
+
 </html>
