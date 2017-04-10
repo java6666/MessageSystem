@@ -1,19 +1,19 @@
 package com.messageSystem.model.entity;
 
 /**
- * Created by Administrator on 2017/4/6.
- *  @author 胡正蛮
- *
- *  注：完善简历页面，教育经历类
+ * Created by admin on 2017/4/10.
+ * 教育经历
+ * @Author  张超
  */
 public class EducationExperience {
-     private Integer id;            //主键
-     private Integer userId;        //外键(关联user表)
-     private String  schoolName;    //学校名
-     private String  education;     //学历
-     private String  specialty;     //专业
-     private String  admissionDate; //入学时间
-     private String  graduateTime;  //毕业时间
+    private Integer id;
+    private Integer userMessageId; //管理用户信息的id
+    private String schoolName;     //学校名称
+    private String education;      //学历
+    private String specialty;      //专业
+    private String admissionDate;  //入学时间
+    private String graduateTime;   //毕业时间
+
 
     public Integer getId() {
         return id;
@@ -23,12 +23,12 @@ public class EducationExperience {
         this.id = id;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getUserMessageId() {
+        return userMessageId;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setUserMessageId(Integer userMessageId) {
+        this.userMessageId = userMessageId;
     }
 
     public String getSchoolName() {

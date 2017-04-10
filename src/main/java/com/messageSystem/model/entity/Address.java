@@ -1,18 +1,23 @@
 package com.messageSystem.model.entity;
 
 /**
- * Created by Administrator on 2017/4/6.
- *  @author 胡正蛮
- *
- *  注：用户注册创建名片页面“地址时间类”
+ * Created by admin on 2017/4/10.
+ *  地址
+ *  @Author 张超
  *
  */
 public class Address {
-    private Integer id;         //主键
-    private Integer userId;    //外键(关联User表)
-    private String  province;   //地址“省”
-    private String  city;       // 地址(市、区)
-    private String  district;   // 县
+    private Integer id;
+    private Integer userMessageId;         //用户id
+    private Integer companyId;             //公司id
+    private Integer educationExperienceId; //学校的id
+    private String nationality;            //国籍
+    private String province;               //省份
+    private String city;                   //城市
+    private String district;               //区/县
+    private String street;                 //街道
+    private String community;              //小区
+    private String houseNumber;            //门牌号码
 
     public Integer getId() {
         return id;
@@ -22,12 +27,36 @@ public class Address {
         this.id = id;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getUserMessageId() {
+        return userMessageId;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setUserMessageId(Integer userMessageId) {
+        this.userMessageId = userMessageId;
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
+    }
+
+    public Integer getEducationExperienceId() {
+        return educationExperienceId;
+    }
+
+    public void setEducationExperienceId(Integer educationExperienceId) {
+        this.educationExperienceId = educationExperienceId;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 
     public String getProvince() {
@@ -52,5 +81,29 @@ public class Address {
 
     public void setDistrict(String district) {
         this.district = district;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getCommunity() {
+        return community;
+    }
+
+    public void setCommunity(String community) {
+        this.community = community;
+    }
+
+    public String getHouseNumber() {
+        return houseNumber;
+    }
+
+    public void setHouseNumber(String houseNumber) {
+        this.houseNumber = houseNumber;
     }
 }

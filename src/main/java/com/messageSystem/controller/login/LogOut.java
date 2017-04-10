@@ -14,13 +14,11 @@ import javax.servlet.http.HttpSession;
  */
 @Controller
 public class LogOut {
-
     /**
      * 销毁session
      * @param session
      * @return 退出到主界面
      */
-
     @RequestMapping(path ="/logOut",method = RequestMethod.GET)
     public String loginOut(HttpSession session){
 

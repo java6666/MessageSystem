@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.messageSystem.model.dao.AccountDao" >
+
+    <!--用户注册-->
+    <insert id="userRegister">
+        INSERT INTO account_table (account, password, permission, registration_date)
+        VALUES (#{account},#{password},#{permission},now());
+    </insert>
+
+    <resultMap id="query" type="com.messageSystem.model.entity.Account">
+        <id column="id" property="id"/>
+        <result column="account" property="account"/>
+        <result column="password" property="password"/>
+        <result column="permission" property="permission"/>
+        <result column="registration_date" property="registerDate"/>
+    </resultMap>
+    <!--查询用户-->
+    <select id="queryUser" resultMap="query">
+        SELECT * FROM  account_table WHERE   account=#{account}
+    </select>
+</mapper>
