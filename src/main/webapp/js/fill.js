@@ -45,6 +45,7 @@ function display_city_chunk(){
 function display_conceal_city(){
 
         document.getElementById('region').style.display = 'block';
+        $("#confirm_cancel").css("margin-top","270px");
     /*document.getElementById('region').style.display = document.getElementById('region').style.display=='none'?'block':'block';*/
 }
 /*隐藏div(选择城市)*/
