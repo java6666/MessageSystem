@@ -17,7 +17,7 @@ public interface UserDao {
      * 插入数据
      * @param user  前台界面获取的对象
      */
-    boolean insertUser(@Param("user") User user);
+    boolean insertUser(User user);
 
 
 
@@ -34,6 +34,7 @@ public interface UserDao {
      * @return
      */
     User queryUser(User user);
+
 
 
 }
