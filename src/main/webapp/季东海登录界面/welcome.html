@@ -7,19 +7,32 @@
 
 	<!--- CSS --->
 	<link rel="stylesheet" href="style.css" type="text/css" />
-
+		<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="selectivizr.js"></script>
+		<noscript><link rel="stylesheet" href="fallback.css" /></noscript>
 	</head>
 
 	<body>
-		<div id="container">
-			<div class="welcome">
-				<div class="welcome-user">Welcome USER!</div>
-				<div class="welcome-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
-				<div class="home"><a href="index.html">HOME</a></div>
+
+
+	<div id="container">
+		<form action="index.html">
+			<div class="login">欢迎来到注册页面(Register)</div>
+			<div class="username-text">姓名(name):</div>
+			<div class="password-text">密码(password):</div>
+			<div class="username-field">
+				<input type="text" name="username" value="用户名(name)" onfocus="javascript:if (this.value=='用户名(name)')this.value=''"/>
 			</div>
-		</div>
-		<div id="footer">
-			Web 2.0 Login More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a>
-		</div>
+			<div class="password-field">
+				<input type="password" name="password"  value="密码(password)" onfocus="javascript:if (this.value=='密码(password)')this.value=''"/>
+			</div>
+			<input type="checkbox" name="remember-me" id="remember-me" /><label for="remember-me">记住用户名</label>
+			<div class="forgot-usr-pwd"> <a href="#"></a></div>
+			<input type="submit" name="submit" value="注册" />
+		</form>
+	</div>
+	<div id="footer">
+		Web 2.0 恭 喜 您 要 称 为 我 公 司 的用 户 的 一 员 了 O(∩_∩)O~
+	</div>
 	</body>
 </html>
