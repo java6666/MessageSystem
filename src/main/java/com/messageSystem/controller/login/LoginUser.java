@@ -40,7 +40,6 @@ public class LoginUser {
             model.addAttribute("userAccount","无法登陆用户不存在,请注册");
         }
 
-
         return "/index.jsp";
     }
 

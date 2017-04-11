@@ -14,10 +14,7 @@ public class MessageController {
 
     @RequestMapping("/showHomePage")
     public String showHomePage(){
-        return "/WEB-INF/homePage.jsp";
+        return "/WEB-INF/personHomePage.jsp";
     }
-
-
-
 
 }
