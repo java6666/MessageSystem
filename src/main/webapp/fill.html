@@ -5,6 +5,28 @@
     <title></title>
     <!--  注册第三步-->
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/Bc.css">
+    <SCRIPT type=text/javascript>
+        function menuFix() {
+            var sfEls = document.getElementById("fm").getElementsByTagName("li");
+            for (var i=0; i<sfEls.length; i++) {
+                sfEls[i].onmouseover=function() {
+                    this.className+=(this.className.length>0? " ": "") + "sfhover";
+                }
+                sfEls[i].onMouseDown=function() {
+                    this.className+=(this.className.length>0? " ": "") + "sfhover";
+                }
+                sfEls[i].onMouseUp=function() {
+                    this.className+=(this.className.length>0? " ": "") + "sfhover";
+                }
+                sfEls[i].onmouseout=function() {
+                    this.className=this.className.replace(new RegExp("( ?|^)sfhover\\b"),
+                        "");
+                }
+            }
+        }
+        window.onload=menuFix;
+    </SCRIPT>
 </head>
 <body>
 <div class="container">
@@ -32,7 +54,7 @@
                         <td colspan="2">
                             <div class="form-group">
                                 <input class="form-control" value="地区" onfocus="javascript:if (this.value=='地区')this.value=''">
-                            </div></td>
+                            </div>
                         <td>
                             <div class="form-group">
                                 <input class="form-control" value="工作年份" onfocus="javascript:if (this.value=='工作年份')this.value=''">
@@ -51,6 +73,16 @@
         </div>
     </div>
 </div>
-
+<ul id=fm>
+    <li>
+        <a href="#">一级菜单栏目</a>
+        <ul>
+            <li><A href="#">一级菜单目录</A></li>
+            <li><A href="#">一级菜单目录</A></li>
+            <li><A href="#">一级菜单目录</A></li>
+            <li><A href="#">一级菜单目录</A></li>
+        </ul>
+    </li>
+</ul>
 </body>
 </html>
