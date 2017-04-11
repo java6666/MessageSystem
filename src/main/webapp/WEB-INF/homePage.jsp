@@ -136,14 +136,14 @@
                             <tr>
                                 <td>
                                     <img src="55557f3b28ee44a8919620ce01a.gif" class="miniFace">
-                                    <c:if test="${sessionScope.USER_LOGIN!=null}">
-                                        ${sessionScope.USER_LOGIN.userName}
+                                    <c:if test="${sessionScope.user_login!=null}">
+                                        ${sessionScope.user_login.account}
                                     </c:if>
                                 </td>
-                                <td><a href="../Backstage/user.jsp">个人主页</a></td>
+                                <td><a href="/HomePage">个人主页</a></td>
                             </tr>
                             <tr>
-                                <td>姓名</td>
+                                <td></td>
                                 <td>查看</td>
                             </tr>
                             <tr>

@@ -7,91 +7,19 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<%--@Author 张超--%>
-
-<head>
-    <meta charset="UTF-8">
-    <title>显示界面</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script>
-        function registerFoo() {
-            var login = document.getElementById("content-0");
-            var register = document.getElementById("content-1");
-            login.style.display = "none";
-            login.innerHTML = register.style.display = "block";
-        };
-
-        /*判读两次输入密码是否一样*/
-
-        function foo(mark) {
-            var passValue = document.getElementById("password");
-            if (!(mark.value == passValue.value)) {
-                alert("两次输入密码不相符");
-            };
-        };
-
-    </script>
-</head>
-<body>
 
 
+<%--
 <div class="container-fluid">
 
     <!--row行样式-->
 
-    <div class="row" style="height: 60px;background-color: #a6e1ec">
-        <table>
-            <tr>
-                <td width="50px"></td>
-                <td><b>北京</b><a>[切换城市]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></td>
-                <td width="50px"><a>首页</a></td>
-                <td width="50px"><a>职位</a></td>
-                <td width="50px"><a>社区</a></td>
-                <td width="50px"><a>海外</a></td>
-                <td width="50px"><a>校园</a></td>
-                <td width="80px"><a>我是猎头</a></td>
-                <td width="90px"><a>我是企业HR</a></td>
-            </tr>
-        </table>
-    </div>
 
     <div class="row">
         <c:if test="${requestScope.user!=null}">
             <script>alert(${requestScope.user})</script>
         </c:if>
 
-        <div class="col-md-9"></div>
-        <div class="col-md-3">
-            <div id="content-0" style="height: 220px;width: 300px;border: 1px #31b0d5 solid;background-color: #31b0d5">
-                <div>
-                    <div>
-                        <form action="/userLogin" method="post">
-                            <div class="form-group">
-                                <label>用户名</label>
-                                <input type="text" name="accountParameter" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>密 码</label>
-                                <input type="password" name="password" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <!-- 按钮样式族 btn基本样式-->
-                                <input type="submit" class="btn btn-warning" value="登录" style="width: 300px"/>
-                            </div>
-                        </form>
-                        <div>
-                            <input type="checkbox">
-                            <span>下次自动登录</span>&nbsp;&nbsp;&nbsp;
-                            <a href="">忘记密码?</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span style="cursor: pointer;" onclick="registerFoo()">立即注册</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div id="content-1"
                  style="height: 280px;width: 300px;border: 1px #31b0d5 solid;background-color: #31b0d5;display: none">
                 <form action="/userRegister" method="post">
@@ -119,7 +47,54 @@
     </div>
 
 </div>
+--%>
+
+
+
+<html dir="ltr" lang="en-US">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Login Form by Azmind.com</title>
+    <!--- CSS --->
+    <link rel="stylesheet" href="../JdhSum/css/style.css" type="text/css" />
+    <!--- Javascript libraries (jQuery and Selectivizr) used for the custom checkbox --->
+
+  <%--  <!--[if (gte IE 6)&(lte IE 8)]>
+    <script type="text/javascript" src="../jQuery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="../jQuery/selectivizr.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="../css/fallback.css"/>
+    </noscript>
+    <![endif]-->
+--%>
+</head>
+
+<body>
+
+
+<div id="container">
+    <form action="/userLogin" method="post">
+        <div class="login">LOGIN(登录)</div>
+        <div class="username-text">姓名：</div>
+        <div class="password-text">密码：</div>
+        <div class="username-field">
+            <input type="text" name="accountParameter" value="用户名" onfocus="javascript:if (this.value=='用户名')this.value=''"/>
+        </div>
+        <div class="password-field">
+            <input type="password" name="password"  />
+        </div>
+        <input type="checkbox" name="remember-me" id="remember-me" /><label for="remember-me">记住用户名</label>
+        <div class="forgot-usr-pwd">忘记 <a href="#">密码</a>?&nbsp;&nbsp;&nbsp;&nbsp;<a href="welcome.jsp">☆注册新用户</a></div>
+        <input value="登录" />
+        <button type="submit" >登录</button>
+
+    </form>
+</div>
+<div id="footer">
+    恭 喜 您 要 成 为 我 公 司 的用 户 的 一 员 了 O(∩_∩)O~
+</div>
 </body>
-
-
 </html>
+
+
