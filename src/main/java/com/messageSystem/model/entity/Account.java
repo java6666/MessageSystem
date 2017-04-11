@@ -13,8 +13,8 @@ public class Account{
     private String  account;       //账号
     private String  password;      //密码
     private Boolean permission;    //管理权限
+    private Boolean accountStatus; //账号状态
     private Date    registerDate;  //注册时间
-
 
 
     public Integer getId() {
@@ -49,6 +49,13 @@ public class Account{
         this.permission = permission;
     }
 
+    public Boolean getAccountStatus() {
+        return accountStatus;
+    }
+
+    public void setAccountStatus(Boolean accountStatus) {
+        this.accountStatus = accountStatus;
+    }
 
     public Date getRegisterDate() {
         return registerDate;

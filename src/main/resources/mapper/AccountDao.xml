@@ -4,8 +4,8 @@
 
     <!--用户注册-->
     <insert id="userRegister">
-        INSERT INTO account_table (account, password, permission, registration_date)
-        VALUES (#{account},#{password},#{permission},now());
+        INSERT INTO account_table (account, password, permission,account_status,registration_date)
+        VALUES (#{account},#{password},#{permission},#{accountStatus},now());
     </insert>
 
     <resultMap id="query" type="com.messageSystem.model.entity.Account">
@@ -13,6 +13,7 @@
         <result column="account" property="account"/>
         <result column="password" property="password"/>
         <result column="permission" property="permission"/>
+        <result column="account_status" property="accountStatus"/>
         <result column="registration_date" property="registerDate"/>
     </resultMap>
     <!--查询用户-->

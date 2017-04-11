@@ -58,7 +58,7 @@
     <filter-mapping>
         <filter-name>myFilter</filter-name>
         <url-pattern>/WEB-INF/*</url-pattern>
-       <!-- <dispatcher>FORWARD</dispatcher>-->
+        <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
 
 

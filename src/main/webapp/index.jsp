@@ -8,91 +8,74 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-
-<%--
-<div class="container-fluid">
-
-    <!--row行样式-->
-
-
-    <div class="row">
-        <c:if test="${requestScope.user!=null}">
-            <script>alert(${requestScope.user})</script>
-        </c:if>
-
-            <div id="content-1"
-                 style="height: 280px;width: 300px;border: 1px #31b0d5 solid;background-color: #31b0d5;display: none">
-                <form action="/userRegister" method="post">
-                    <div class="form-group">
-                        <label>输入账号</label>
-                        <input name="accountParameter" class="form-control"/>
-                    </div>
-
-                    <div class="form-group">
-                        <label>输入密码</label>
-                        <input type="password" class="form-control" id="password">
-                    </div>
-
-                    <div class="form-group">
-                        <label>确认密码</label>
-                        <input type="password" name="password" class="form-control" onmouseout="foo(this)">
-                    </div>
-                        <input type="submit" class="btn btn-primary" value="提交" style="width: 300px"/>
-                </form>
-                <a href="/userLogin">已有账号，马上登陆</a>
-            </div>
-        </div>
-
-
-    </div>
-
-</div>
---%>
-
-
-
 <html dir="ltr" lang="en-US">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
-    <title>Login Form by Azmind.com</title>
-    <!--- CSS --->
-    <link rel="stylesheet" href="../JdhSum/css/style.css" type="text/css" />
-    <!--- Javascript libraries (jQuery and Selectivizr) used for the custom checkbox --->
+    <title>Material Kit by Creative Tim</title>
 
-  <%--  <!--[if (gte IE 6)&(lte IE 8)]>
-    <script type="text/javascript" src="../jQuery/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="../jQuery/selectivizr.js"></script>
-    <noscript>
-        <link rel="stylesheet" href="../css/fallback.css"/>
-    </noscript>
-    <![endif]-->
---%>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
+
+    <!-- CSS Files -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="assets/css/material-kit.css" rel="stylesheet"/>
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="assets/css/demo.css" rel="stylesheet"/>
 </head>
 
 <body>
 
+<div class="section section-full-screen section-signup"
+     style="background-image: url('assets/img/city.jpg'); background-size: cover; background-position: top center; min-height: 700px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="card card-signup">
+                    <form action="/userLogin" method="post">
+                        <p class="text-divider"></p>
+                        <div class="content">
 
-<div id="container">
-    <form action="/userLogin" method="post">
-        <div class="login">LOGIN(登录)</div>
-        <div class="username-text">姓名：</div>
-        <div class="password-text">密码：</div>
-        <div class="username-field">
-            <input type="text" name="accountParameter" value="用户名" onfocus="javascript:if (this.value=='用户名')this.value=''"/>
-        </div>
-        <div class="password-field">
-            <input type="password" name="password"  />
-        </div>
-        <input type="checkbox" name="remember-me" id="remember-me" /><label for="remember-me">记住用户名</label>
-        <div class="forgot-usr-pwd">忘记 <a href="#">密码</a>?&nbsp;&nbsp;&nbsp;&nbsp;<a href="welcome.jsp">☆注册新用户</a></div>
-        <input value="登录" />
-        <button type="submit" >登录</button>
+                            <div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">face</i>
+										</span>
+                                <input type="text" name="accountParameter" class="form-control" placeholder="User Name...">
+                            </div>
 
-    </form>
-</div>
-<div id="footer">
-    恭 喜 您 要 成 为 我 公 司 的用 户 的 一 员 了 O(∩_∩)O~
+                            <div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">lock_outline</i>
+										</span>
+                                <br>
+                                <input type="password"  name="password" placeholder="Password..." class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="footer text-center">
+                            <br>
+                            <br>
+                        </div>
+                        <div class="footer text-center">
+                           <span>
+                               <button type="submit" class="label label-info">登录</button>
+                            </span>
+                            <span>
+                                <button type="reset" class="label label-default">取消</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

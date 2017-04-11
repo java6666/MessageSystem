@@ -29,14 +29,27 @@ public class LoginUser {
 
         if (queryUser!=null){//用户存在
 
-            if (queryUser.getPassword().equals(password)){//密码正确，执行登陆
+            if (queryUser.getPassword().equals(password)&&
+                        queryUser.getPermission()==false&&
+                        queryUser.getAccountStatus()==true){//密码正确,非管理员，账号无异常，执行登陆
+
                 session.setAttribute(USER_LOGIN,queryUser);
                 return "redirect:/showHomePage";
-            }else{//密码不正确
-                model.addAttribute("userAccount","密码有误，请从新输入");
-            }
 
+            }else if (queryUser.getPassword().equals(password)&&
+                                queryUser.getPermission()!=false){//管理员进入用户注册界面
+
+                session.setAttribute(USER_LOGIN,queryUser);
+                return "/WEB-INF/admin.jsp";
+
+            }else {
+
+                //密码不正确
+                model.addAttribute("userAccount","密码有误，请从新输入");
+
+            }
         }else {//用户不存在
+
             model.addAttribute("userAccount","无法登陆用户不存在,请注册");
         }
 

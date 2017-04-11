@@ -22,19 +22,19 @@
 <body>
 
 <div id="container">
-    <form action="index.jsp">
-        <div class="login">欢迎来到注册页面(Register)</div>
-        <div class="username-text">姓名(name)：</div>
-        <div class="password-text">密码(password)：</div>
+    <form action="../index.jsp">
+        <div class="username-text">账号：</div>
+        <div class="password-text">密码：</div>
         <div class="username-field">
-            <input type="text" />
+            <input type="text" name="accountParameter"/>
         </div>
         <div class="password-field">
-            <input type="password"/>
+            <input type="password" name="password"/>
         </div>
-        <input type="checkbox" name="remember-me" id="remember-me" /><label for="remember-me">记住用户名</label>
-        <div class="forgot-usr-pwd"> <a href="#"></a></div>
-        <input type="submit" name="submit" value="注册" />
+        <input type="checkbox" name="remember-me" id="remember-me" /><label for="remember-me">经理</label>
+        <input type="checkbox" name="remember-me" id="remember-me1" /><label for="remember-me">经理</label>
+        <div class="forgot-usr-pwd"></div>
+        <input type="submit"  value="注册" />
     </form>
 </div>
 </body>
