@@ -3,6 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>工资表设计</title>
+    <script language="javascript">
+        var t = null;
+        t = setTimeout(time,1000);//开始执行
+        function time()
+        {
+
+            clearTimeout(t);//清除定时器
+            dt = new Date();
+            var h=dt.getHours();
+            var m=dt.getMinutes();
+            var s=dt.getSeconds();
+            document.getElementById("timeShow").innerHTML =  "现在时间为："+h+"时"+m+"分"+s+"秒";
+            t = setTimeout(time,1000); //设定定时器，循环执行
+        }
+    </script>
     <link href="css/bootstrap.css" rel="stylesheet">
     <style>
         input::-webkit-input-placeholder {
@@ -13,9 +28,8 @@
             color: #c2c2c2;
             -webkit-transition: color.5s;
         }
-
-
     </style>
+
 </head>
 <body >
 <img src="back.png"width="500px" height="400px">
@@ -89,6 +103,6 @@
             <th >\数据库\工资库\.mdb</th>
         </tr>
     </table>
-
+<label id="timeShow"></label>
 </body>
 </html>
