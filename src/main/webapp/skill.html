@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择职能界面</title>
+    <script language="javascript">
+        var t = null;
+        t = setTimeout(time,1000);//开始执行
+        function time()
+        {
+
+            clearTimeout(t);//清除定时器
+            dt = new Date();
+            var h=dt.getHours();
+            var m=dt.getMinutes();
+            var s=dt.getSeconds();
+            document.getElementById("timeShow").innerHTML =  "现在时间为："+h+"时"+m+"分"+s+"秒";
+            t = setTimeout(time,1000); //设定定时器，循环执行
+        }
+    </script>
+    <link type="text/css" href="../css/bootstrap.css" rel="stylesheet"/>
+    <style>
+        .reelect{
+            background-color: orange;
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="row" style="height: 80px;width:1216px;background-color: deepskyblue">
+    <b style="color: white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;选择职能</b>
+    <b style="margin-left: 1050px;color: #c4e3f3">X</b>
+    <img src="img/7.png" width="450px" height="30px" >
+    <input value="重选" class="reelect">
+</div>
+<label id="timeShow"></label>
+</body>
+</html>

@@ -4,13 +4,25 @@
     <meta charset="UTF-8">
     <title>工资表设计</title>
     <link href="css/bootstrap.css" rel="stylesheet">
+    <style>
+        input::-webkit-input-placeholder {
+            color: red;
+            -webkit-transition: color.5s;
+        }
+        input:focus::-webkit-input-placeholder, input:hover::-webkit-input-placeholder {
+            color: #c2c2c2;
+            -webkit-transition: color.5s;
+        }
+
+
+    </style>
 </head>
-<body class="container">
+<body >
 <img src="back.png"width="500px" height="400px">
 <table border="2" width="1000px" style="color: red" height=20px>
 <h1 align="center" style="color: red"; class="col-xs-offset-1 col-xs-4">工资表信息库</h1>
     <h5>
-        职工工资号<input></br>
+        职工工资号<input  type="text" placeholder="" name="pay"/></br>
         职工姓名<input ></br>
         所在部门<input>
         <select>

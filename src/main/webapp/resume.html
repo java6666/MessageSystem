@@ -2,45 +2,90 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link type="text/css" href="css/bootstrap.css" rel="stylesheet"/>
+    <title>完善简历界面</title>
+    <link type="text/css" href="../css/bootstrap.css" rel="stylesheet"/>
+<style>
+    .work{
+        font-family: 新宋体;
+        color: forestgreen;
+        font-size: 20px;
 
+    }
+    .notice {
+        font-family: 黑体;
+        color: red;
+        font-size: 23px;
+        padding-bottom: 32px;
+    }
+    .work2{
+        border: 1px;
+        width: 500px;
+        height: 150px;
+        border-color:blue;
+    }
+</style>
 </head>
 <body>
 <h1 >完善简历<img src="img/2.png" width="80px" height="40px"></h1></br>
 <h2><img src="img/3.png" width="80px" height="40px">工作经历&nbsp;&nbsp;&nbsp;体现你的业务水平</h2>
 
 </br>
-<div class="container">
-    <input value="最近一家就职公司名称">
+<div class="container" >
+    <input value="最近一家就职公司名称" class="form-control"
+           onfocus="javascript:if (this.value=='最近一家就职公司名称')this.value=''">
     <br></br>
-    <input value="职业名称" >
-    &nbsp;&nbsp;&nbsp;  <input value="所在行业与技能">
+    <input value="职业名称" class="form-control"
+           onfocus="javascript:if (this.value=='职业名称')this.value=''">
+    &nbsp;&nbsp;&nbsp;
+    <input value="所在行业与技能"  class="form-control"
+           onfocus="javascript:if (this.value=='所在行业与技能')this.value=''">
+    <img src="img/6.png" width="25px" height="25px" onclick="window.open('choose.html')">
+
+
     <br></br>
-    <input value="开始工作时间"><select>
+    <input value="开始工作时间" class="form-control"
+           onfocus="javascript:if (this.value=='开始工作时间')this.value=''"><select>
       <option>2017.2.5</option>
       <option>2017.8.8</option>
 </select>
-    &nbsp;&nbsp;&nbsp;  <input value="每月薪水" >元/月
+    &nbsp;&nbsp;&nbsp;  <input value="每月薪水" class="form-control"
+                               onfocus="javascript:if (this.value=='每月薪水')this.value=''">元/月
     <input type="checkbox">对猎头和HR显示为保密
     <br></br>
-<input value="请详述你的工作职责范围和工作业绩。">
+<input value="请详述你的工作职责范围和工作业绩。"class="work2"
+       onfocus="javascript:if (this.value=='请详述你的工作职责范围和工作业绩。')this.value=''">
     <br></br>
+    <h2 class="work">【产品经理的工作职责】</h2>
+        <h5 class="notice">
+            1.深入了解用户需求，深入分析数据，研究和借鉴国外先进网站的经验，制定用户体验持续优化方案并制
+            作页面原形；</br>
+            2.领导产品经理和设计师等团队成员，协调技术资源并设定优先级，确保各重要项目按时上线，
+            并对工作质量和业务结果负责；</br>
+            3.对多个产品方案进行对比测试并进行数据分析，以确定最佳改进方案。</br>
+            4.监控产品上线后的流量、转化率和用户反馈，持续改进。
+        </h5>
+
      <h1><img src="img/4.png" width="80px" height="40px">教育经历 &nbsp;&nbsp;&nbsp;体现你的业务水平</h1>
-    <input value=学校名称> &nbsp;&nbsp;&nbsp;<input value="最高学历">
+    <input value=学校名称 class="form-control"
+           onfocus="javascript:if (this.value=='学校名称')this.value=''" > &nbsp;&nbsp;&nbsp;
+    <input value="最高学历" onfocus="javascript:if (this.value=='最高学历')this.value=''">
+
     <input type="checkbox">统招
     <br></br>
-    <input value=专业名称>&nbsp;&nbsp;&nbsp;
-    <input value="入学时间"><select>
+    <input value=专业名称 class="form-control"
+           onfocus="javascript:if (this.value=='专业名称')this.value=''">&nbsp;&nbsp;&nbsp;
+    <input value="入学时间" class="form-control"
+           onfocus="javascript:if (this.value=='入学时间')this.value=''"><select>
     <option>2017.2.5</option>
     <option>2017.8.8</option>
 </select>
-    <input value="毕业时间"><select>
+    <input value="毕业时间" class="form-control"
+           onfocus="javascript:if (this.value=='毕业时间')this.value=''" ><select>
     <option>2017.12.12</option>
     <option>2017.9.9</option>
 </select>
     <br></br>
-<input type="submit" value="完成" >
+    <button type="button" class="btn btn-info"  onclick="window.open('Test.html')">完成</button>
 </div>
 
 
