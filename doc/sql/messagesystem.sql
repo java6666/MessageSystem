@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50554
 File Encoding         : 65001
 
-Date: 2017-04-12 14:54:30
+Date: 2017-04-12 15:39:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,12 +23,12 @@ CREATE TABLE `account_table` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `account` varchar(255) NOT NULL COMMENT '用户账号',
   `password` varchar(255) NOT NULL COMMENT '密码',
-  `permission` varchar(50) DEFAULT NULL COMMENT '管理员 是 1  ；hr 2  普通员工 3',
+  `permission` varchar(50) DEFAULT NULL COMMENT '管理员 是 1  ；hr 2  普通员工 3  财务4   绩效5',
   `account_status` varchar(50) DEFAULT NULL COMMENT '账号状态 ：0 表示不可用  1  表示可用  2  表示待激活',
   `registration_date` datetime DEFAULT NULL COMMENT '注册时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `account` (`account`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='账号密码管理权限表';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='账号密码管理权限表';
 
 -- ----------------------------
 -- Records of account_table
@@ -36,6 +36,8 @@ CREATE TABLE `account_table` (
 INSERT INTO `account_table` VALUES ('1', 'admin', '123456', '1', '1', '2017-04-10 14:57:55');
 INSERT INTO `account_table` VALUES ('2', 'hr123456', '123456', '2', '1', '2017-04-10 15:17:22');
 INSERT INTO `account_table` VALUES ('5', 'zg123', '123', '3', '1', '2017-04-12 11:15:54');
+INSERT INTO `account_table` VALUES ('6', 'cw123', '123', '4', '1', '2017-04-12 15:39:02');
+INSERT INTO `account_table` VALUES ('7', 'xg123', '123', '5', '1', '2017-04-12 15:39:31');
 
 -- ----------------------------
 -- Table structure for address
@@ -112,6 +114,23 @@ CREATE TABLE `education_experience` (
 
 -- ----------------------------
 -- Records of education_experience
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for log_table
+-- ----------------------------
+DROP TABLE IF EXISTS `log_table`;
+CREATE TABLE `log_table` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `account_id` int(11) DEFAULT NULL COMMENT '账号id',
+  `loginid` varchar(255) DEFAULT NULL COMMENT '记录登录账号',
+  `loginTime` datetime DEFAULT NULL COMMENT '登录时间',
+  `quitTime` datetime DEFAULT NULL COMMENT '退出时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='登录日志表';
+
+-- ----------------------------
+-- Records of log_table
 -- ----------------------------
 
 -- ----------------------------

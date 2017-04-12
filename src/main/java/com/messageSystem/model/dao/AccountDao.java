@@ -4,7 +4,7 @@ import com.messageSystem.model.entity.Account;
 
 /**
  * Created by admin on 2017/4/10.
- * @Author 张超
+ * @Author
  */
 public interface AccountDao {
 

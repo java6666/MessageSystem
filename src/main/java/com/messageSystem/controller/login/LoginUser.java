@@ -51,6 +51,20 @@ public class LoginUser {
                 session.setAttribute(USER_LOGIN,queryUser);
                 return "/WEB-INF/admin.jsp";
 
+            }else if (queryUser.getPassword().equals(password)&&
+                    queryUser.getPermission().equals("4")&&
+                    queryUser.getAccountStatus().equals("1")){//财务进入界面
+                session.setAttribute(USER_LOGIN,queryUser);
+                return "/WEB-INF/finance.jsp";
+
+
+            }else if (queryUser.getPassword().equals(password)&&
+                    queryUser.getPermission().equals("5")&&
+                    queryUser.getAccountStatus().equals("1")){//绩效考核界面
+                session.setAttribute(USER_LOGIN,queryUser);
+                return "/WEB-INF/performance.jsp";
+
+
             }else {
                 //密码不正确
                 model.addAttribute("userAccount","密码有误，请从新输入");
