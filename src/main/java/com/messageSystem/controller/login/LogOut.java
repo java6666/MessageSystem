@@ -24,6 +24,7 @@ public class LogOut {
 
         session.invalidate();
 
+
         return "/index.jsp";
 
     }

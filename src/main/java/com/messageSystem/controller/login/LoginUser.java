@@ -28,24 +28,33 @@ public class LoginUser {
         Account queryUser = accountDao.queryUser(accountParameter);//通过用户名查询到用户的参数
 
         if (queryUser!=null){//用户存在
-
+            //管理分级     管理员 是 1  ；hr 2  普通员工 3
+            //账号状态 ：0 表示不可用  1  表示可用  2  表示待激活
             if (queryUser.getPassword().equals(password)&&
-                        queryUser.getPermission()==false&&
-                        queryUser.getAccountStatus()==true){//密码正确,非管理员，账号无异常，执行登陆
+                    queryUser.getPermission().equals("3")&&
+                    queryUser.getAccountStatus().equals("1")
+                      ){//密码正确,员工，账号无异常，执行登陆
 
                 session.setAttribute(USER_LOGIN,queryUser);
                 return "redirect:/showHomePage";
 
             }else if (queryUser.getPassword().equals(password)&&
-                                queryUser.getPermission()!=false){//管理员进入用户注册界面
+                       queryUser.getPermission().equals("2")&&
+                       queryUser.getAccountStatus().equals("1")
+                             ){//hr进入的界面
+
+                //
+
+            }else if (queryUser.getPassword().equals(password)&&
+                        queryUser.getPermission().equals("1") ){  //管理员进入界面
 
                 session.setAttribute(USER_LOGIN,queryUser);
                 return "/WEB-INF/admin.jsp";
 
             }else {
-
                 //密码不正确
                 model.addAttribute("userAccount","密码有误，请从新输入");
+
 
             }
         }else {//用户不存在
@@ -54,6 +63,9 @@ public class LoginUser {
         }
 
         return "/index.jsp";
+
+
+
     }
 
 

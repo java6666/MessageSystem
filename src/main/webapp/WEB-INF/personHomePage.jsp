@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: admin
@@ -29,21 +30,31 @@
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="../assets/css/demo.css" rel="stylesheet"/>
 
+    <script>
+
+        function foo(mark) {
+            for(var i=0;i<=5;i++){
+                document.getElementById("count-"+i).style.display=i==mark?"block":"none";
+            }
+        }
+    </script>
+
 </head>
 
 <body class="index-page">
 
 <nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
     <div class="container">
+        <c:if test="${sessionScope.user_login.account!=null}" >
+            欢迎登录:<span style="color: white;">${sessionScope.user_login.account}</span>
+        </c:if>
         <div class="navbar-header">
-            <a href="#">
                 <div class="logo-container">
                     <div class="logo">
-                        <img src="../assets/img/avatar.jpg" height="80px" width="100px" alt="Thumbnail Image"
+                        <img src="../assets/img/avatar.jpg" width="100px" alt="Thumbnail Image"
                              class="img-circle img-raised img-responsive">
                     </div>
                 </div>
-            </a>
         </div>
 
         <div class="collapse navbar-collapse" id="navigation-index">
@@ -51,37 +62,37 @@
                 <li>
                     <a rel="tooltip" title="个人信息" data-placement="bottom"
                        class="btn btn-white btn-simple btn-just-icon">
-                        <i class="material-icons">account_circle</i>
+                        <i class="material-icons" onclick="foo(0)">account_circle</i>
                     </a>
                 </li>
                 <li>
                     <a rel="tooltip" title="出勤率" data-placement="bottom" class="btn btn-white btn-simple btn-just-icon">
-                        <i class="material-icons">unarchive</i>
+                        <i class="material-icons" onclick="foo(1)">unarchive</i>
                     </a>
                 </li>
                 <li>
                     <a rel="tooltip" title="薪水" data-placement="bottom" class="btn btn-white btn-simple btn-just-icon">
-                        <i class="material-icons">attach_money</i>
+                        <i class="material-icons" onclick="foo(2)">attach_money</i>
                     </a>
                 </li>
                 <li>
                     <a rel="tooltip" title="邮箱" data-placement="bottom" class="btn btn-white btn-simple btn-just-icon">
-                        <i class="material-icons">email</i>
+                        <i class="material-icons" onclick="foo(3)">email</i>
                     </a>
                 </li>
                 <li>
                     <a rel="tooltip" title="通知" data-placement="bottom"
                        class="btn btn-white btn-simple btn-just-icon">
-                        <i class="material-icons">chat</i>
+                        <i class="material-icons" onclick="foo(4)">chat</i>
                     </a>
                 </li>
                 <li>
                     <a rel="tooltip" title="聊天" data-placement="bottom" class="btn btn-white btn-simple btn-just-icon">
-                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-twitter"onclick="foo(5)"></i>
                     </a>
                 </li>
                 <li>
-                    <a rel="tooltip" title="退出" data-placement="bottom" class="btn btn-white btn-simple btn-just-icon">
+                    <a href="/logOut" rel="tooltip" title="退出" data-placement="bottom" class="btn btn-white btn-simple btn-just-icon">
                         <i class="material-icons">error_outline</i>
                     </a>
                 </li>
@@ -100,24 +111,25 @@
         </div>
     </div>
 </nav>
-<div class="wrapper">
+<div class="wrapper" style="height: 500px">
     <div class="header header-filter" style="background-image: url('../assets/img/bg2.jpeg');">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="brand">
-                        需要显示的类容
 
-                    </div>
-                </div>
+                <div   class="brand" id="count-0" style="height: 400px;width: 100%;background-color: yellow;display: none">个人信息页</div>
+                <div   class="brand" id="count-1" style="height: 400px;width: 100%;background-color: blue;display: none">绩效考核</div>
+                <div   class="brand" id="count-2" style="height: 400px;width: 100%;background-color: green;display: none">薪资福利</div>
+                <div   class="brand" id="count-3" style="height: 400px;width: 100%;background-color: brown;display: none">邮件</div>
+                <div   class="brand" id="count-4" style="height: 400px;width: 100%;background-color: sandybrown;display: none">申请</div>
+                <div   class="brand" id="count-5" style="height: 400px;width: 100%;background-color: black;display: none">聊天</div>
+
             </div>
+
 
         </div>
     </div>
 
 </div>
-
-
 <footer class="footer">
     <div class="container">
         <div class="copyright pull-right">
@@ -153,5 +165,6 @@
         }
 
     });
+
 </script>
 </html>

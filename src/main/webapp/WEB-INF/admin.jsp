@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: admin
@@ -29,6 +30,15 @@
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="../assets/css/demo.css" rel="stylesheet"/>
 
+    <script>
+
+        function foo(mark) {
+            for (var i = 0; i <= 3; i++) {
+                document.getElementById("count-" + i).style.display = i == mark ? "block" : "none";
+            }
+        }
+    </script>
+
 </head>
 
 <body>
@@ -45,35 +55,74 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#pablo">欢迎登录</a>
+                    <c:if test="${sessionScope.user_login.account!=null}">
+                        欢迎登录:<span style="color: white;">${sessionScope.user_login.account}</span>
+                    </c:if>
                 </div>
 
                 <div class="collapse navbar-collapse" id="example-navbar-primary">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#pablo" style="font-size: 18px">
-                                所用账号
+                            <a rel="tooltip" title="用户账号" data-placement="bottom"
+                               class="btn btn-white btn-simple btn-just-icon">
+                                <button class="btn btn-success">
+                                    <i  onclick="foo(0)" class="material-icons">group</i>
+                                <div class="ripple-container"></div></button>
                             </a>
+                            <br/>
+                        </li>
+                        <li>
+                            <a rel="tooltip" title="新增账号" data-placement="bottom"
+                               class="btn btn-white btn-simple btn-just-icon">
+                                <button  class="btn btn-success">
+                                    <i  onclick="foo(1)" class="material-icons">account_circle</i>
+                                </button>
+                            </a>
+                            <br/>
+                        </li>
+                        <li>
+                            <a rel="tooltip" title="邮件" data-placement="bottom"
+                               class="btn btn-white btn-simple btn-just-icon">
+                                <button    class="btn btn-info">
+                                <i onclick="foo(2)"class="material-icons">email</i>
+                            </button>
+                            </a>
+                            <br/>
                         </li>
 
                         <li>
-                            <a href="#pablo" style="font-size: 18px">
-                                新增账号
+                            <a rel="tooltip" title="登录日志" data-placement="bottom"
+                               class="btn btn-white btn-simple btn-just-icon">
+                                <button    class="btn btn-warning">
+                                    <i onclick="foo(3)" class="material-icons">chat</i>
+                                    <div class="ripple-container"></div>
+                                </button>
+
                             </a>
+                            <br/>
+
                         </li>
                         <li>
-                            <a href="#pablo" style="font-size: 18px">
-                                退出系统
+                            <a href="/logOut" rel="tooltip" title="退出系统" data-placement="bottom"
+                               class="btn btn-white btn-simple btn-just-icon">
+                                <button class="btn btn-danger">
+                                    <i class="material-icons">error_outline</i>
+                                    <div class="ripple-container"></div>
+                                </button>
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+    </div>
 
+    <div class="brand" id="count-0" style="height: 500px;width: 100%;background-color: red;display: none">所用用户</div>
+    <div class="brand" id="count-1" style="height: 500px;width: 100%;background-color: yellow;display: none">新增用户</div>
+    <div class="brand" id="count-2" style="height: 500px;width: 100%;background-color: black;display: none">邮件</div>
+    <div class="brand" id="count-3" style="height: 500px;width: 100%;background-color: blue;display: none">登录日志</div>
 
     </div>
-</div>
 </body>
 <!--   Core JS Files   -->
 <script src="../assets/js/jquery.min.js" type="text/javascript"></script>
