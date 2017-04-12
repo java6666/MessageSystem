@@ -12,7 +12,7 @@ public class Account {
     private Integer id;
     private String account;       //账号
     private String password;      //密码
-    private String permission;    //管理分级   管理员 是 1  ；hr 2  普通员工 3
+    private String permission;    //管理分级   管理员 是 1  ；personnel 2  普通员工 3
     private String accountStatus; //账号状态 ：0 表示不可用  1  表示可用  2  表示待激活
     private Date registerDate;  //注册时间
 

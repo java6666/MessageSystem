@@ -1,10 +1,17 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: admin
+  Date: 2017/4/12
+  Time: 14:44
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="assets/css/PeopleInformation.css" type="text/css">
-    <script src="jQuery/jquery-3.2.0.js"></script>
-    <script language="JavaScript" type="text/javascript" src="assets/js/PeopleInformation.js"></script>
+    <link rel="stylesheet" href="../assets/css/PeopleInformation.css" type="text/css">
+    <script src="../jQuery/jquery-3.2.0.js"></script>
+    <script language="JavaScript" type="text/javascript" src="../assets/js/PeopleInformation.js"></script>
     <title>管理员系统</title>
 
 </head>

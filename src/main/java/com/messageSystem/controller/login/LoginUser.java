@@ -28,7 +28,7 @@ public class LoginUser {
         Account queryUser = accountDao.queryUser(accountParameter);//通过用户名查询到用户的参数
 
         if (queryUser!=null){//用户存在
-            //管理分级     管理员 是 1  ；hr 2  普通员工 3
+            //管理分级     管理员 是 1  ；personnel 2  普通员工 3
             //账号状态 ：0 表示不可用  1  表示可用  2  表示待激活
             if (queryUser.getPassword().equals(password)&&
                     queryUser.getPermission().equals("3")&&
@@ -42,8 +42,8 @@ public class LoginUser {
                        queryUser.getPermission().equals("2")&&
                        queryUser.getAccountStatus().equals("1")
                              ){//hr进入的界面
-
-                //
+                session.setAttribute(USER_LOGIN,queryUser);
+                return "/WEB-INF/hrHomePage.jsp";
 
             }else if (queryUser.getPassword().equals(password)&&
                         queryUser.getPermission().equals("1") ){  //管理员进入界面

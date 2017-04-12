@@ -65,17 +65,18 @@
                         <li>
                             <a rel="tooltip" title="用户账号" data-placement="bottom"
                                class="btn btn-white btn-simple btn-just-icon">
-                                <button class="btn btn-success">
-                                    <i  onclick="foo(0)" class="material-icons">group</i>
-                                <div class="ripple-container"></div></button>
+                                <button onclick="foo(0)" class="btn btn-success">
+                                    <i class="material-icons">group</i>
+                                    <div class="ripple-container"></div>
+                                </button>
                             </a>
                             <br/>
                         </li>
                         <li>
                             <a rel="tooltip" title="新增账号" data-placement="bottom"
                                class="btn btn-white btn-simple btn-just-icon">
-                                <button  class="btn btn-success">
-                                    <i  onclick="foo(1)" class="material-icons">account_circle</i>
+                                <button onclick="foo(1)" class="btn btn-success">
+                                    <i class="material-icons">account_circle</i>
                                 </button>
                             </a>
                             <br/>
@@ -83,9 +84,9 @@
                         <li>
                             <a rel="tooltip" title="邮件" data-placement="bottom"
                                class="btn btn-white btn-simple btn-just-icon">
-                                <button    class="btn btn-info">
-                                <i onclick="foo(2)"class="material-icons">email</i>
-                            </button>
+                                <button onclick="foo(2)" class="btn btn-info">
+                                    <i class="material-icons">email</i>
+                                </button>
                             </a>
                             <br/>
                         </li>
@@ -93,8 +94,8 @@
                         <li>
                             <a rel="tooltip" title="登录日志" data-placement="bottom"
                                class="btn btn-white btn-simple btn-just-icon">
-                                <button    class="btn btn-warning">
-                                    <i onclick="foo(3)" class="material-icons">chat</i>
+                                <button onclick="foo(3)" class="btn btn-warning">
+                                    <i class="material-icons">chat</i>
                                     <div class="ripple-container"></div>
                                 </button>
 
@@ -115,42 +116,23 @@
                 </div>
             </div>
         </nav>
-    </div>
+        <div class="container" id="count-0" style="height: 500px;width: 100%;background-color: red;display: none">
+            
 
-    <div class="brand" id="count-0" style="height: 500px;width: 100%;background-color: red;display: none">所用用户</div>
-    <div class="brand" id="count-1" style="height: 500px;width: 100%;background-color: yellow;display: none">新增用户</div>
-    <div class="brand" id="count-2" style="height: 500px;width: 100%;background-color: black;display: none">邮件</div>
-    <div class="brand" id="count-3" style="height: 500px;width: 100%;background-color: blue;display: none">登录日志</div>
 
+
+            所用用户
+        </div>
+        <div class="brand" id="count-1" style="height: 500px;width: 100%;background-color: yellow;display: none">
+            新增用户
+        </div>
+        <div class="brand" id="count-2" style="height: 500px;width: 100%;background-color: black;display: none">
+            邮件
+        </div>
+        <div class="brand" id="count-3" style="height: 500px;width: 100%;background-color: blue;display: none">
+            登录日志
+        </div>
     </div>
+</div>
 </body>
-<!--   Core JS Files   -->
-<script src="../assets/js/jquery.min.js" type="text/javascript"></script>
-<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="../assets/js/material.min.js"></script>
-
-<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-<script src="../assets/js/nouislider.min.js" type="text/javascript"></script>
-
-<!--  Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
-<script src="../assets/js/bootstrap-datepicker.js" type="text/javascript"></script>
-
-<!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
-<script src="../assets/js/material-kit.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-
-    $().ready(function () {
-        // the body of this function is in assets/material-kit.js
-        materialKit.initSliders();
-        window_width = $(window).width();
-
-        if (window_width >= 992) {
-            big_image = $('.wrapper > .header');
-
-            $(window).on('scroll', materialKitDemo.checkScrollForParallax);
-        }
-
-    });
-</script>
 </html>
