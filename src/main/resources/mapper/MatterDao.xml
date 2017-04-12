@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.messageSystem.model.dao.MatterDao" >
+    <!--汪潇逸，出勤考核
+    -->
+
+    <resultMap id="query" type="com.messageSystem.model.entity.MatterTable">
+        <id column="id" property="id"/>
+        <result column="user_message_id" property="userMessageId"/>
+        <result column="matter" property="matter"/>
+        <result column="start_time" property="startTime"/>
+        <result column="end_time" property="endTime"/>
+    </resultMap>
+    <!--查询所有用户的出勤状况-->
+    <select id="selectByuserMessageId" resultMap="query">
+        SELECT * FROM  matter_table WHERE user_message_id=#{userMessageId};
+    </select>
+</mapper>

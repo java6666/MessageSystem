@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.messageSystem.model.dao.PerformanceDao" >
+<!--汪潇逸，出勤考核
+-->
+    <!--用户注册-->
+    <resultMap id="query" type="com.messageSystem.model.entity.DailyAttendanceRecord">
+        <id column="id" property="id"/>
+        <result column="user_message_id" property="userMessageId"/>
+        <result column="attendance_rate" property="attendanceRate"/>
+        <result column="days_off" property="daysOff"/>
+        <result column="overtime_days" property="pvertimeDays"/>
+    </resultMap>
+    <!--查询所有用户的出勤状况-->
+    <select id="selectAll" resultMap="query">
+        SELECT * FROM  daily_attendance_record;
+    </select>
+</mapper>
