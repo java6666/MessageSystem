@@ -17,6 +17,7 @@ public class SalaryTable {
     private Double housingAllowance;       //住房补贴
     private Double tax;                    //扣税
     private Double fsalary;                //实发工资
+    private Integer cardNumber;            //工资卡号
 
     public Integer getId() {
         return id;

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50554
 File Encoding         : 65001
 
-Date: 2017-04-12 13:54:08
+Date: 2017-04-12 14:54:30
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -3680,7 +3680,7 @@ INSERT INTO `region` VALUES ('5000', '511681', '华蓥市', '286', '0', '0', 'hu
 -- ----------------------------
 DROP TABLE IF EXISTS `salary_table`;
 CREATE TABLE `salary_table` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '工资号',
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '工资卡号',
   `user_message_id` int(11) NOT NULL COMMENT '用户id',
   `daily_attendance_record` int(11) DEFAULT NULL COMMENT '员工考勤id',
   `pay_time` datetime DEFAULT NULL COMMENT '发工资时间',
@@ -3689,6 +3689,7 @@ CREATE TABLE `salary_table` (
   `housing_allowance` double(10,0) DEFAULT NULL COMMENT '住房补贴',
   `tax` double(10,0) DEFAULT NULL COMMENT '扣税',
   `fsalary` double(10,0) DEFAULT NULL COMMENT '实发工资',
+  `card_number` int(11) DEFAULT NULL COMMENT '工资卡号',
   PRIMARY KEY (`id`,`user_message_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='工资表';
 
