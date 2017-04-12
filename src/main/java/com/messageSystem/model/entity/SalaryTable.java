@@ -90,4 +90,12 @@ public class SalaryTable {
     public void setFsalary(Double fsalary) {
         this.fsalary = fsalary;
     }
+
+    public Integer getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(Integer cardNumber) {
+        this.cardNumber = cardNumber;
+    }
 }
