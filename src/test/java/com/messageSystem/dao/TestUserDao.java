@@ -17,7 +17,7 @@ public class TestUserDao {
 
     @Test
     public void testInsertUser() {
-
+/*
         Account account = new Account();
         account.setAccount("123");
       //  account.setPassword("123");
@@ -29,7 +29,7 @@ public class TestUserDao {
        // System.out.println(b);
 
        //测试查询数据
-    /*    Account account1 = dao.queryUser(account);
+    *//*    Account account1 = dao.queryUser(account);
         System.out.println(account1);*/
     }
 }

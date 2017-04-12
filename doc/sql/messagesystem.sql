@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50554
 File Encoding         : 65001
 
-Date: 2017-04-10 16:30:27
+Date: 2017-04-12 13:54:08
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,18 +23,19 @@ CREATE TABLE `account_table` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `account` varchar(255) NOT NULL COMMENT '用户账号',
   `password` varchar(255) NOT NULL COMMENT '密码',
-  `permission` tinyint(1) DEFAULT NULL COMMENT '管理权限',
+  `permission` varchar(50) DEFAULT NULL COMMENT '管理员 是 1  ；hr 2  普通员工 3',
+  `account_status` varchar(50) DEFAULT NULL COMMENT '账号状态 ：0 表示不可用  1  表示可用  2  表示待激活',
   `registration_date` datetime DEFAULT NULL COMMENT '注册时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `account` (`account`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='账号密码管理权限表';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='账号密码管理权限表';
 
 -- ----------------------------
 -- Records of account_table
 -- ----------------------------
-INSERT INTO `account_table` VALUES ('1', 'admin', '123456', '1', '2017-04-10 14:57:55');
-INSERT INTO `account_table` VALUES ('2', '123', '123', '0', '2017-04-10 15:17:22');
-INSERT INTO `account_table` VALUES ('4', '123456', '123456', null, '2017-04-10 15:55:21');
+INSERT INTO `account_table` VALUES ('1', 'admin', '123456', '1', '1', '2017-04-10 14:57:55');
+INSERT INTO `account_table` VALUES ('2', 'hr123456', '123456', '2', '1', '2017-04-10 15:17:22');
+INSERT INTO `account_table` VALUES ('5', 'zg123', '123', '3', '1', '2017-04-12 11:15:54');
 
 -- ----------------------------
 -- Table structure for address
@@ -78,6 +79,23 @@ CREATE TABLE `company` (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for daily_attendance_record
+-- ----------------------------
+DROP TABLE IF EXISTS `daily_attendance_record`;
+CREATE TABLE `daily_attendance_record` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_message_id` int(11) DEFAULT NULL COMMENT '用户id',
+  `attendance_rate` int(11) DEFAULT NULL COMMENT '出勤天数',
+  `days_off` int(11) DEFAULT NULL COMMENT '休假天数',
+  `overtime_days` int(11) DEFAULT NULL COMMENT '加班天数',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='考勤表';
+
+-- ----------------------------
+-- Records of daily_attendance_record
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for education_experience
 -- ----------------------------
 DROP TABLE IF EXISTS `education_experience`;
@@ -94,6 +112,23 @@ CREATE TABLE `education_experience` (
 
 -- ----------------------------
 -- Records of education_experience
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for matter_table
+-- ----------------------------
+DROP TABLE IF EXISTS `matter_table`;
+CREATE TABLE `matter_table` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_message_id` int(11) DEFAULT NULL COMMENT '用户id',
+  `matter` varchar(255) DEFAULT NULL COMMENT '事项:  病假，产假，出差，年休，公休',
+  `start_time` datetime DEFAULT NULL COMMENT '起始时间',
+  `end_time` datetime DEFAULT NULL COMMENT '结束时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='人员状态表';
+
+-- ----------------------------
+-- Records of matter_table
 -- ----------------------------
 
 -- ----------------------------
@@ -3639,6 +3674,27 @@ INSERT INTO `region` VALUES ('4700', '431102', '零陵区', '228', '0', '0', 'li
 INSERT INTO `region` VALUES ('4800', '451119', '平桂管理区', '263', '0', '0', 'pingguiguanli qu', '2');
 INSERT INTO `region` VALUES ('4900', '510802', '利州区', '279', '0', '0', 'lizhou qu', '2');
 INSERT INTO `region` VALUES ('5000', '511681', '华蓥市', '286', '0', '0', 'huaying shi', 'hyc');
+
+-- ----------------------------
+-- Table structure for salary_table
+-- ----------------------------
+DROP TABLE IF EXISTS `salary_table`;
+CREATE TABLE `salary_table` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '工资号',
+  `user_message_id` int(11) NOT NULL COMMENT '用户id',
+  `daily_attendance_record` int(11) DEFAULT NULL COMMENT '员工考勤id',
+  `pay_time` datetime DEFAULT NULL COMMENT '发工资时间',
+  `base_salary` double(10,0) DEFAULT NULL COMMENT '基本工资',
+  `overtime_wage` double(10,0) DEFAULT NULL COMMENT '加班工资',
+  `housing_allowance` double(10,0) DEFAULT NULL COMMENT '住房补贴',
+  `tax` double(10,0) DEFAULT NULL COMMENT '扣税',
+  `fsalary` double(10,0) DEFAULT NULL COMMENT '实发工资',
+  PRIMARY KEY (`id`,`user_message_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='工资表';
+
+-- ----------------------------
+-- Records of salary_table
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for user_message

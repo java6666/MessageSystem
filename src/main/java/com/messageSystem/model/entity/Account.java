@@ -8,13 +8,13 @@ import java.util.Date;
  *
  * @Author  张超
  */
-public class Account{
+public class Account {
     private Integer id;
-    private String  account;       //账号
-    private String  password;      //密码
-    private Boolean permission;    //管理权限
-    private Date    registerDate;  //注册时间
-
+    private String account;       //账号
+    private String password;      //密码
+    private String permission;    //管理分级   管理员 是 1  ；hr 2  普通员工 3
+    private String accountStatus; //账号状态 ：0 表示不可用  1  表示可用  2  表示待激活
+    private Date registerDate;  //注册时间
 
 
     public Integer getId() {
@@ -41,14 +41,21 @@ public class Account{
         this.password = password;
     }
 
-    public Boolean getPermission() {
+    public String getPermission() {
         return permission;
     }
 
-    public void setPermission(Boolean permission) {
+    public void setPermission(String permission) {
         this.permission = permission;
     }
 
+    public String getAccountStatus() {
+        return accountStatus;
+    }
+
+    public void setAccountStatus(String accountStatus) {
+        this.accountStatus = accountStatus;
+    }
 
     public Date getRegisterDate() {
         return registerDate;
