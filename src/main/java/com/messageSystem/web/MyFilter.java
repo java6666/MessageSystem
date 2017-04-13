@@ -45,7 +45,6 @@ public class MyFilter implements Filter {
             resp.sendRedirect("/");
         }
     }
-
     @Override
     public void destroy() {
 

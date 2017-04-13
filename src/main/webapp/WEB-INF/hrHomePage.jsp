@@ -8,387 +8,347 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--人事页面--%>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-
     <meta charset="utf-8"/>
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Material Kit by Creative Tim</title>
+
+    <title>Light Bootstrap Dashboard by Creative Tim</title>
+
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
+    <meta name="viewport" content="width=device-width"/>
+
+
+    <!-- Bootstrap core CSS     -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../assets/css/material-kit.css" rel="stylesheet"/>
+
+    <!-- Animation library for notifications   -->
+    <link href="../assets/css/animate.min.css" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="../assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="../assets/css/demo.css" rel="stylesheet"/>
-    <meta name="description" content="人力资源管理平台"/>
-    <title>人力资源管理平台</title>
-    <link type="text/css" rel="stylesheet" href="../assets/css/css.css"/>
 
-    <script>
-        function foo(mark) {
-            for (var i = 0; i <= 4; i++) {
-                document.getElementById("count-" + i).style.display = i == mark ? "block" : "none";
-            }
-        }
-        function foo1(mark) {
-            for (var i = 0; i <= 3; i++) {
-                document.getElementById("count-Min-" + i).style.display = i == mark ? "block" : "none";
-            }
-        }
-    </script>
 
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="../assets/css/pe-icon-7-stroke.css" rel="stylesheet"/>
+    <style type="text/css">
+        label {
+            font-size: 20px;
+            color: black;
+        }
+    </style>
 </head>
 <body>
 
-<div class="header">
-    <div class="top"><img class="logo" src="../assets/images/logo.jpg"/>
-        <ul class="nav">
-            <li class="seleli" onclick="foo(0)"><a>首页</a></li>
-            <li onclick="foo(1)"><a>人才招聘</a></li>
-            <li onclick="foo(2)"><a>人事资料</a></li>
-            <li onclick="foo(3)"><a>培训管理</a></li>
-            <li onclick="foo(4)"><a>企业文化</a></li>
-        </ul>
-
-    </div>
-
-</div>
 <div class="wrapper">
-    <div class="container-fluid">
-        <div class="leftbar">
-            <div class="lm01"><img class="peptx" src="../assets/images/tximg.jpg"/>
-                <div class="pepdet">
-                    <p class="pepname">
-                        <c:if test="${sessionScope.user_login!=null}">
-                            欢迎登录:<span style="color: chartreuse;">${sessionScope.user_login.account}</span>
-                        </c:if>
-                    </p>
-                    <a href="/logOut" style="color: red">退出</a>
-                    <p>名字</p>
-                    <p>部门</p>
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="lm02">
-                <div class="title"><img class="icon" src="../assets/images/dataicon.jpg"/>
-                    <h2>日历</h2>
-                </div>
-                <div class="detail"><img class="" src="../assets/images/kj_01.jpg"/></div>
-            </div>
-            <div class="lm03">
-                <div class="title"><img style="padding-right:5px;" class="icon" src="../assets/images/weaicon.jpg"/>
-                    <h2>天气</h2>
-                </div>
-                <div class="detail"><img class="" src="../assets/images/kj_02.jpg"/></div>
-            </div>
-        </div>
-        <div id="count-0" style="display: block" class="mainbody">
-            <div class="adtip">
-                <div class="tip">
-                    <p class="goom">早上好，管理员！</p>
-                    <p>您目前有<span>15</span>条待办，<span>1</span>条考勤异常，<span>2</span>条通知！</p>
-                </div>
-                <div class="adv">
-                    <p>公司统一公告在这边展示</p>
-                    <span> x </span></div>
-            </div>
+    <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
+
+        <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
 
 
-            <div class="rig_lm03">
-                <div class="title"><img src="../assets/images/listicon.jpg" class="icon" style="padding-top:13px;">
-                    <h2>待办事项</h2>
-                </div>
-                <div class="detail">
-                    <div class="inner03">
-                        <div id="tabCot_product" class="zhutitab">
-                            <div class="tabContainer">
-                                <ul class="tabHead" id="tabCot_product-li-currentBtn-">
-                                    <li class="currentBtn"><a href="javascript:void(0)" title="绩效考核"
-                                                              rel="1">绩效考核</a><span class="grey_numb">12</span></li>
-                                    <li><a href="javascript:void(0)" title="人事考核" rel="2">人事考核</a><span
-                                            class="red_numb">2</span></li>
-                                    <li><a href="javascript:void(0)" title="TAB名称" rel="3">TAB名称</a><span
-                                            class="red_numb">5</span></li>
-                                </ul>
-                                <p class="shent"><span>Show entries: </span>
-                                    <input style="width:30px;" type="text" value="10">
-                                    <img src="../assets/images/sz.jpg" class="icon" style=""></p>
-                                <div class="clear"></div>
-                            </div>
-                            <div id="tabCot_product_1" class="tabCot">
-                                <table class="tabindex" width="100%" border="0" cellpadding="0" cellspacing="0">
-                                    <tr>
-                                        <th width="10%" bgcolor="#f8f8f8" scope="col">
-                                            <div align="center">照片</div>
-                                        </th>
-                                        <th width="21%" bgcolor="#f8f8f8" scope="col"><span
-                                                class="titlab">事项名称</span><span class="xila">&or;</span></th>
-                                        <th width="22%" bgcolor="#f8f8f8" scope="col"><span
-                                                class="titlab">创建时间</span><span class="xila">&or;</span></th>
-                                        <th width="21%" bgcolor="#f8f8f8" scope="col"><span
-                                                class="titlab">当前处理人</span><span class="xila">&or;</span></th>
-                                        <th width="7%" bgcolor="#f8f8f8" scope="col"><span class="titlab">状态</span><span
-                                                class="xila">&or;</span></th>
-                                        <th width="19%" bgcolor="#f8f8f8" scope="col">操作</th>
-                                    </tr>
-                                    <tr>
-                                        <td bgcolor="#FFFFFF">
-                                            <div align="center"><img src="../assets/images/tx.jpg"></div>
-                                        </td>
-                                        <td class="datacol" bgcolor="#FFFFFF">8月份绩效考核打分</td>
-                                        <td bgcolor="#FFFFFF">Feb 12,2012 12:28</td>
-                                        <td bgcolor="#FFFFFF">wangqiang-已审批</td>
-                                        <td class="yccol" bgcolor="#FFFFFF">异常</td>
-                                        <td class="czcol" bgcolor="#FFFFFF"><a href="#">提醒处理</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
-                                                href="#">查看</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td bgcolor="#f8f8f8">
-                                            <div align="center"><img src="../assets/images/tx.jpg"></div>
-                                        </td>
-                                        <td class="datacol" bgcolor="#f8f8f8">8月份绩效考核打分</td>
-                                        <td bgcolor="#f8f8f8">Feb 12,2012 12:28</td>
-                                        <td bgcolor="#f8f8f8">wangqiang-已审批</td>
-                                        <td class="yccol" bgcolor="#f8f8f8">异常</td>
-                                        <td class="czcol" bgcolor="#f8f8f8"><a href="#">提醒处理</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
-                                                href="#">查看</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td bgcolor="#FFFFFF">
-                                            <div align="center"><img src="../assets/images/tx.jpg"></div>
-                                        </td>
-                                        <td class="datacol" bgcolor="#FFFFFF">8月份绩效考核打分</td>
-                                        <td bgcolor="#FFFFFF">Feb 12,2012 12:28</td>
-                                        <td bgcolor="#FFFFFF">wangqiang-已审批</td>
-                                        <td class="yccol" bgcolor="#FFFFFF">异常</td>
-                                        <td class="czcol" bgcolor="#FFFFFF"><a href="#">提醒处理</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
-                                                href="#">查看</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td bgcolor="#f8f8f8">
-                                            <div align="center"><img src="../assets/images/tx.jpg"></div>
-                                        </td>
-                                        <td class="datacol" bgcolor="#f8f8f8">8月份绩效考核打分</td>
-                                        <td bgcolor="#f8f8f8">Feb 12,2012 12:28</td>
-                                        <td bgcolor="#f8f8f8">wangqiang-已审批</td>
-                                        <td class="waitcol" bgcolor="#f8f8f8">等待审批</td>
-                                        <td class="czcol" bgcolor="#f8f8f8"><a href="#">通过</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
-                                                href="#">查看</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td bgcolor="#FFFFFF">
-                                            <div align="center"><img src="../assets/images/tx.jpg"></div>
-                                        </td>
-                                        <td class="datacol" bgcolor="#FFFFFF">8月份绩效考核打分</td>
-                                        <td bgcolor="#FFFFFF">Feb 12,2012 12:28</td>
-                                        <td bgcolor="#FFFFFF">wangqiang-已审批</td>
-                                        <td class="waitcol" bgcolor="#f8f8f8">等待审批</td>
-                                        <td class="czcol" bgcolor="#f8f8f8"><a href="#">通过</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
-                                                href="#">查看</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td bgcolor="#f8f8f8">
-                                            <div align="center"><img src="../assets/images/tx.jpg"></div>
-                                        </td>
-                                        <td class="datacol" bgcolor="#f8f8f8">8月份绩效考核打分</td>
-                                        <td bgcolor="#f8f8f8">Feb 12,2012 12:28</td>
-                                        <td bgcolor="#f8f8f8">wangqiang-已审批</td>
-                                        <td class="waitcol" bgcolor="#f8f8f8">等待审批</td>
-                                        <td class="czcol" bgcolor="#f8f8f8"><a href="#">通过</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
-                                                href="#">查看</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td bgcolor="#FFFFFF">
-                                            <div align="center"><img src="../assets/images/tx.jpg"></div>
-                                        </td>
-                                        <td class="datacol" bgcolor="#FFFFFF">8月份绩效考核打分</td>
-                                        <td bgcolor="#FFFFFF">Feb 12,2012 12:28</td>
-                                        <td bgcolor="#FFFFFF">wangqiang-已审批</td>
-                                        <td class="waitcol" bgcolor="#f8f8f8">等待审批</td>
-                                        <td class="czcol" bgcolor="#f8f8f8"><a href="#">通过</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
-                                                href="#">查看</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td bgcolor="#f8f8f8">
-                                            <div align="center"><img src="../assets/images/tx.jpg"></div>
-                                        </td>
-                                        <td class="datacol" bgcolor="#f8f8f8">8月份绩效考核打分</td>
-                                        <td bgcolor="#f8f8f8">Feb 12,2012 12:28</td>
-                                        <td bgcolor="#f8f8f8">wangqiang-已审批</td>
-                                        <td class="waitcol" bgcolor="#f8f8f8">等待审批</td>
-                                        <td class="czcol" bgcolor="#f8f8f8"><a href="#">通过</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
-                                                href="#">查看</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td bgcolor="#FFFFFF">
-                                            <div align="center"><img src="../assets/images/tx.jpg"></div>
-                                        </td>
-                                        <td class="datacol" bgcolor="#FFFFFF">8月份绩效考核打分</td>
-                                        <td bgcolor="#FFFFFF">Feb 12,2012 12:28</td>
-                                        <td bgcolor="#FFFFFF">wangqiang-已审批</td>
-                                        <td class="waitcol" bgcolor="#f8f8f8">等待审批</td>
-                                        <td class="czcol" bgcolor="#f8f8f8"><a href="#">通过</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
-                                                href="#">查看</a></td>
-                                    </tr>
-                                </table>
-                                <div class="fanye">
-                                    <div class="yem">
-                                        <ul>
-                                            <li><a href="#">First</a></li>
-                                            <li><a href="#">&lt;</a></li>
-                                            <li class="sellify"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">&gt;</a></li>
-                                            <li><a href="#">Last</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="tabCot_product_2" class="tabCot" style="display: none;"> 2222222222</div>
-                            <div id="tabCot_product_3" class="tabCot" style="display: none;"> 3333333333</div>
-                            <script language="JavaScript" type="text/javascript" src="../assets/js/tab.js"></script>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="count-1" style="display: none" class="mainbody">
-            <div class="adtip">
-                <div class="tip">
-                    <p class="goom">早上好，管理员！</p>
-                    <p>您目前有<span>15</span>条待办，<span>1</span>条考勤异常，<span>2</span>条通知！</p>
-                </div>
-                <div class="adv">
-                    <p>公司统一公告在这边展示</p>
-                    <span> x </span></div>
+        <div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="#" class="simple-text">
+                    管理界面
+                </a>
             </div>
 
-
-            <div class="rig_lm03">
-                <div class="title">
-                    <a rel="tooltip" title="邮件" data-placement="bottom"
-                       class="btn btn-white btn-simple btn-just-icon">
-                        <button class="btn btn-info">
-
-                        </button>
+            <ul class="nav">
+                <li>
+                    <a href="dashboard.html">
+                        <i class="pe-7s-graph"></i>
+                        <p>主页</p>
                     </a>
+                </li>
+                <li class="active">
+                    <a href="user.html">
+                        <i class="pe-7s-user"></i>
+                        <p>人事管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="table.html">
+                        <i class="pe-7s-note2"></i>
+                        <p>培训管理</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="typography.html">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>员工招聘</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="icons.html">
+                        <i class="pe-7s-science"></i>
+                        <p>企业文化</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                 </div>
-                <div class="detail">
-                    <div class="inner03">
-                        1
-                    </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-dashboard"></i>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-globe"></i>
+                                <b class="caret"></b>
+                                <span class="notification">5</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">通知</a></li>
+                                <li><a href="#">Notification 2</a></li>
+                                <li><a href="#">Notification 3</a></li>
+                                <li><a href="#">Notification 4</a></li>
+                                <li><a href="#">Another notification</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="">
+                                Account
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Dropdown
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/logOut">
+                                退出
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <div id="count-2" style="display: none" class="mainbody">
-            <div class="rig_lm03">
-                <button class="btn btn-info" onclick="foo1(0)">
-                    <i class="material-icons" >信息录入</i>
-                </button>
-                <button class="btn btn-success" onclick="foo1(1)">
-                    <i class="material-icons" >修改信息</i>
-                </button>
-                <button class="btn btn-warning" onclick="foo1(2)">
-                    <i class="material-icons">查询页面</i>
-                </button>
-                <div class="detail" >
-                    <div id="count-Min-0" class="inner03" style="height: 500px">
-                        <div class="row">
-                            <div class="col-md-4">
-
+        </nav>
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">个人信息录入</h4>
                             </div>
-                            <div class="col-md-4">
+                            <div class="content">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>工号:</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>姓名:</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>性别</label>
+                                                <input type="email" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>出生日期</label>
+                                                <input type="email" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>婚姻:</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>籍贯:</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>民族</label>
+                                                <input type="email" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>政治面貌</label>
+                                                <input type="email" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
 
+
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label>学校名称</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>学历</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>专业</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>入学时间</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>毕业时间</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>手机号码</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>身份证号码</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label>公司名称</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>公司性质</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>部门</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>职位</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>入职时间</label>
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </form>
                             </div>
-                            <div class="col-md-4">
-
-                            </div>
-
                         </div>
-                        <form action="/add" method="post">
-
-                            <div class="form-group">
-                                <label>作者:</label>
-                                <input type="text" class="form-control" name="author">
-                            </div>
-                            <div class="form-group">
-                                <label>标题:</label>
-                                <input type="text" class="form-control" name="title">
-                            </div>
-                            <div class="form-group">
-                                <label>内容:</label>
-                                <input type="text" class="form-control" name="content">
-                            </div>
-                            <div class="form-group">
-                                <label>创建日期:</label>
-                                <input type="text" class="form-control" name="date">
-                            </div>
-                            <%--提交按钮--%>
-                            <div class="form-group">
-                                <!-- 按钮样式族 btn基本样式-->
-                                <input type="submit" class="btn btn-primary">
-                            </div>
-                        </form>
-                    </div>
-                    <div id="count-Min-1" class="inner03" style="background-color: yellow;height: 600px;display: none" >
-
-                    </div>
-                    <div id="count-Min-2" class="inner03" style="background-color: blue;height: 600px;display: none" >
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="count-3" style="display: none" class="mainbody">
-            <div class="adtip">
-                <div class="tip">
-                    <p class="goom">早上好，管理员！</p>
-                    <p>您目前有<span>15</span>条待办，<span>1</span>条考勤异常，<span>2</span>条通知！</p>
-                </div>
-                <div class="adv">
-                    <p>公司统一公告在这边展示</p>
-                    <span> x </span></div>
-            </div>
-
-
-            <div class="rig_lm03">
-                <div class="title"><img src="../assets/images/listicon.jpg" class="icon" style="padding-top:13px;">
-                    <h2>待办事项</h2>
-                </div>
-                <div class="detail">
-                    <div class="inner03">
-                        3
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="count-4" style="display: none" class="mainbody">
-            <div class="adtip">
-                <div class="tip">
-                    <p class="goom">早上好，管理员！</p>
-                    <p>您目前有<span>15</span>条待办，<span>1</span>条考勤异常，<span>2</span>条通知！</p>
-                </div>
-                <div class="adv">
-                    <p>公司统一公告在这边展示</p>
-                    <span> x </span></div>
-            </div>
-
-
-            <div class="rig_lm03">
-                <div class="title"><img src="../assets/images/listicon.jpg" class="icon" style="padding-top:13px;">
-                    <h2>待办事项</h2>
-                </div>
-                <div class="detail">
-                    <div class="inner03">
-                        4
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+</div>
+</div>
+
+
 </body>
+
+<!--   Core JS Files   -->
+<script src="../assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!--  Checkbox, Radio & Switch Plugins -->
+<script src="../assets/js/bootstrap-checkbox-radio-switch.js"></script>
+
+<!--  Charts Plugin -->
+<script src="../assets/js/chartist.min.js"></script>
+
+<!--  Notifications Plugin    -->
+<script src="../assets/js/bootstrap-notify.js"></script>
+
+<!--  Google Maps Plugin    -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+<!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+<script src="../assets/js/light-bootstrap-dashboard.js"></script>
+
+<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+<script src="../assets/js/demo.js"></script>
+
 </html>
