@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50554
 File Encoding         : 65001
 
-Date: 2017-04-13 10:05:59
+Date: 2017-04-13 18:19:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -3731,6 +3731,8 @@ CREATE TABLE `user_message` (
   `marital_status` varchar(255) DEFAULT NULL COMMENT '婚姻状况',
   `phone_number` int(11) DEFAULT NULL COMMENT '手机号码',
   `Id_card` varchar(255) DEFAULT NULL COMMENT '身份证号码',
+  `nation` varchar(255) DEFAULT NULL COMMENT '名族',
+  `politics_status` varchar(255) DEFAULT NULL COMMENT '政治面貌',
   PRIMARY KEY (`id`),
   UNIQUE KEY `job_number` (`job_number`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -14,6 +14,8 @@ public class UserMessage {
     private Boolean gender;          //性别
     private String birthday;         //出生日期
     private String nativePlace;      //籍贯
+    private String nation;           //名族
+    private String politicsStatus;   //政治面貌
     private String maritalStatus;    //婚姻状况
     private Integer phoneNumber;     //手机号码
 
@@ -79,6 +81,22 @@ public class UserMessage {
 
     public void setNativePlace(String nativePlace) {
         this.nativePlace = nativePlace;
+    }
+
+    public String getNation() {
+        return nation;
+    }
+
+    public void setNation(String nation) {
+        this.nation = nation;
+    }
+
+    public String getPoliticsStatus() {
+        return politicsStatus;
+    }
+
+    public void setPoliticsStatus(String politicsStatus) {
+        this.politicsStatus = politicsStatus;
     }
 
     public String getMaritalStatus() {
