@@ -6,7 +6,7 @@ package com.messageSystem.model.entity;
  *  @Author 张超
  *
  */
-public class Address {
+public class  Address {
     private Integer id;
     private Integer userMessageId;         //用户id
     private Integer companyId;             //公司id

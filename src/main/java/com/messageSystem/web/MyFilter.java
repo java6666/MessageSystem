@@ -31,10 +31,18 @@ public class MyFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest req= (HttpServletRequest) servletRequest;
         HttpServletResponse resp= (HttpServletResponse) servletResponse;
+        String path = req.getServletPath();
+        if(path.endsWith(".jsp")||path.endsWith(".css")
+                ||path.endsWith(".js")||path.endsWith(".jpg")||
+                path.equals("/userLogin")
+                ){
+            filterChain.doFilter(servletRequest,servletResponse);
+            return;
+        }
         if((req.getSession().getAttribute(USER_LOGIN))!=null){
             filterChain.doFilter(servletRequest,servletResponse);
         }else {
-            req.getRequestDispatcher("/index.jsp").forward(req,resp);
+            resp.sendRedirect("/");
         }
     }
 

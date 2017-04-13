@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50554
 File Encoding         : 65001
 
-Date: 2017-04-12 15:39:50
+Date: 2017-04-13 10:05:59
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -3723,13 +3723,16 @@ DROP TABLE IF EXISTS `user_message`;
 CREATE TABLE `user_message` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `account_table_id` int(11) NOT NULL COMMENT '关联账号id',
+  `job_number` varchar(255) DEFAULT NULL COMMENT '员工工号',
   `username` varchar(255) DEFAULT NULL COMMENT '姓名',
   `gender` tinyint(1) DEFAULT NULL COMMENT '性别',
   `birthday` varchar(255) DEFAULT NULL COMMENT '出生日期',
   `native_place` varchar(255) DEFAULT NULL COMMENT '籍贯',
   `marital_status` varchar(255) DEFAULT NULL COMMENT '婚姻状况',
   `phone_number` int(11) DEFAULT NULL COMMENT '手机号码',
-  PRIMARY KEY (`id`)
+  `Id_card` varchar(255) DEFAULT NULL COMMENT '身份证号码',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `job_number` (`job_number`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
