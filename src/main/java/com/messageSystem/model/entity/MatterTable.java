@@ -15,4 +15,43 @@ public class MatterTable {
     private Date    startTime;      //起始时间
     private Date    endTime;        //结束时间
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getUserMessageId() {
+        return userMessageId;
+    }
+
+    public void setUserMessageId(Integer userMessageId) {
+        this.userMessageId = userMessageId;
+    }
+
+    public String getMatter() {
+        return matter;
+    }
+
+    public void setMatter(String matter) {
+        this.matter = matter;
+    }
+
+    public Date getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
 }

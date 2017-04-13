@@ -1,4 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: user
@@ -31,8 +33,12 @@
                 <tr>
                    <td>${item.userMessageId}</td>
                    <td>${item.matter}</td>
-                   <td>${item.startTime}</td>
-                   <td>${item.endTime}</td>
+                  <%-- <td>${item.startTime}</td>
+                   <td>${item.endTime}</td>--%>
+                   <td><fmt:formatDate value="${item.startTime}" pattern ="yyyy-MM-dd"/> </td>
+                   <td><fmt:formatDate value="${item.endTime}" pattern ="yyyy-MM-dd"/></td>
+
+
                 </tr>
             </c:forEach>
         </table>
