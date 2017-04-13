@@ -47,7 +47,6 @@ public class LoginUser {
 
             }else if (queryUser.getPassword().equals(password)&&
                         queryUser.getPermission().equals("1") ){  //管理员进入界面
-
                 session.setAttribute(USER_LOGIN,queryUser);
                 return "/WEB-INF/admin.jsp";
 

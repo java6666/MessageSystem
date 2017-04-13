@@ -8,9 +8,11 @@ package com.messageSystem.model.entity;
 public class UserMessage {
     private Integer id;
     private Integer accountTableId;  //账号的id
+    private String jobNumber;        //员工工号
     private String userName;         //姓名
+    private String idCard;           //身份证号码
     private Boolean gender;          //性别
-    private String  birthday;        //出生日期
+    private String birthday;         //出生日期
     private String nativePlace;      //籍贯
     private String maritalStatus;    //婚姻状况
     private Integer phoneNumber;     //手机号码
@@ -31,12 +33,28 @@ public class UserMessage {
         this.accountTableId = accountTableId;
     }
 
+    public String getJobNumber() {
+        return jobNumber;
+    }
+
+    public void setJobNumber(String jobNumber) {
+        this.jobNumber = jobNumber;
+    }
+
     public String getUserName() {
         return userName;
     }
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
     }
 
     public Boolean getGender() {
