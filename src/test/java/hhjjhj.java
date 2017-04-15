@@ -12,6 +12,5 @@ public class hhjjhj {
         ClassPathXmlApplicationContext context
                 = new ClassPathXmlApplicationContext("spring.xml");
 
-
     }
 }

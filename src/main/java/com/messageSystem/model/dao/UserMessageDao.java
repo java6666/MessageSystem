@@ -10,4 +10,5 @@ import java.util.List;
 public interface UserMessageDao {
     List<UserMessage>selectAllAndCompany();
     List<UserMessage>selectAllAndCompanyById(Integer id);
+
 }
