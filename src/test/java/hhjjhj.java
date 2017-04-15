@@ -11,11 +11,7 @@ public class hhjjhj {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context
                 = new ClassPathXmlApplicationContext("spring.xml");
-        System.out.println(context);
-        UserMessageDao bean = context.getBean(UserMessageDao.class);
-        System.out.println(bean);
-        List<UserMessage> list = bean.selectAllAndCompanyById(1);
-        UserMessage u = list.get(0);
-        System.out.println(u);
+
+
     }
 }
