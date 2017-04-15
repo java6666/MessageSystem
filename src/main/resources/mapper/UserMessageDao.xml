@@ -39,6 +39,7 @@ position;     -->
             <result column="company_nature" property="companyNature"/>
             <result column="section" property="section"/>
             <result column="position" property="position"/>
+            <!--fdsdfds-->
         </association>
     </resultMap>
     <select id="selectAllAndCompanyById" resultMap="query">
@@ -47,4 +48,5 @@ position;     -->
     <select id="selectAllAndCompany" resultMap="query">
         SELECT *from user_message LEFT JOIN company ON user_message.id=company.user_message_id
     </select>
+
 </mapper>
