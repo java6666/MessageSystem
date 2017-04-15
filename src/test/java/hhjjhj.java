@@ -14,7 +14,7 @@ public class hhjjhj {
         System.out.println(context);
         UserMessageDao bean = context.getBean(UserMessageDao.class);
         System.out.println(bean);
-        List<UserMessage> list = bean.selectAllAndCompany(1);
+        List<UserMessage> list = bean.selectAllAndCompanyById(1);
         UserMessage u = list.get(0);
         System.out.println(u);
     }

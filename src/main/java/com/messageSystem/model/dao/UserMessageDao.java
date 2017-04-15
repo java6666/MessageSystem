@@ -8,6 +8,6 @@ import java.util.List;
  * Created by ASUS on 2017/4/15.
  */
 public interface UserMessageDao {
-    List<UserMessage>selectAll();
-    List<UserMessage>selectAllAndCompany(Integer id);
+    List<UserMessage>selectAllAndCompany();
+    List<UserMessage>selectAllAndCompanyById(Integer id);
 }

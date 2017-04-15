@@ -41,7 +41,10 @@ position;     -->
             <result column="position" property="position"/>
         </association>
     </resultMap>
-    <select id="selectAllAndCompany" resultMap="query">
+    <select id="selectAllAndCompanyById" resultMap="query">
          SELECT *from user_message LEFT JOIN company ON user_message.id=company.user_message_id where user_message.id=#{id}
+    </select>
+    <select id="selectAllAndCompany" resultMap="query">
+        SELECT *from user_message LEFT JOIN company ON user_message.id=company.user_message_id
     </select>
 </mapper>
