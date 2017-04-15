@@ -11,6 +11,7 @@
 
 
     <!--读取配置文件-->
+    <!--h'j'h'j-->
     <context:property-placeholder location="classpath*:jdbc.properties"/>
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
         <property name="driverClassName" value="${jdbc.driverClass}"/>
