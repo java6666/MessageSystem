@@ -19,6 +19,16 @@ public class UserMessage {
     private String maritalStatus;    //婚姻状况
     private Integer phoneNumber;     //手机号码
 
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+    private Company company;//      关联公司
+
     public Integer getId() {
         return id;
     }

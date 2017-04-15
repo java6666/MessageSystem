@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.messageSystem.model.dao.UserMessageDao">
+    <!--汪潇逸
+     accountTableId;
+jobNumber;
+userName;
+idCard;
+ gender;
+birthday;
+nativePlace;
+nation;
+politicsStatus;
+maritalStatus;
+ phoneNumber;
+
+     userMessageId
+companyName;
+companyNature;
+section;
+position;     -->
+    <resultMap id="query" type="com.messageSystem.model.entity.UserMessage">
+        <id column="id" property="id"/>
+        <result column="account_table_id" property="accountTableId"/>
+        <result column="job_number" property="jobNumber"/>
+        <result column="username" property="userName"/>
+        <result column="gender" property="gender"/>
+        <result column="birthday" property="birthday"/>
+        <result column="native_place" property="nativePlace"/>
+        <result column="marital_status" property="maritalStatus"/>
+        <result column="phone_number" property="phoneNumber"/>
+        <result column="Id_card" property="idCard"/>
+        <result column="nation" property="nation"/>
+        <result column="politics_status" property="politicsStatus"/>
+        <association property="company" javaType="com.messageSystem.model.entity.Company">
+            <id column="id" property="id"/>
+            <result column="user_message_id" property="userMessageId"/>
+            <result column="company_name" property="companyName"/>
+            <result column="company_nature" property="companyNature"/>
+            <result column="section" property="section"/>
+            <result column="position" property="position"/>
+        </association>
+    </resultMap>
+    <select id="selectAllAndCompany" resultMap="query">
+         SELECT *from user_message LEFT JOIN company ON user_message.id=company.user_message_id where user_message.id=#{id}
+    </select>
+</mapper>
