@@ -42,11 +42,15 @@ position;     -->
             <!--fdsdfds-->
         </association>
     </resultMap>
+
     <select id="selectAllAndCompanyById" resultMap="query">
          SELECT *from user_message LEFT JOIN company ON user_message.id=company.user_message_id where user_message.id=#{id}
     </select>
+
     <select id="selectAllAndCompany" resultMap="query">
+
         SELECT *from user_message LEFT JOIN company ON user_message.id=company.user_message_id
-    </select>
+
+</select>
 
 </mapper>
